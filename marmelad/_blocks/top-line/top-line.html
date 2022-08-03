@@ -1,0 +1,27 @@
+<div block="top-line">
+  <div elem="section">
+    <div elem="main-bar">
+      <div elem="inner" class="contain">
+        <a elem="button-search" href="">{{ _icon('search-icon', { tag: 'i' }) }}</a>
+        {% include "logo.html" %}
+        <button elem="button-burger" class="js-button-burger" type="button"></button>
+      </div>
+    </div>
+    <div elem="nav-bar" class="js-nav-bar">
+      <div elem="inner" class="contain">
+        {% include "main-menu.html" %}
+        <div elem="links">
+          <a href="#">
+            <span>Подкасты</span>
+            {{ _icon('podcasts-icon', { tag: 'i' }) }}
+          </a>
+          <a href="#">
+            <span>Вещание</span>
+            {{ _icon('stream-icon', { tag: 'i' }) }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div><!-- top-line -->

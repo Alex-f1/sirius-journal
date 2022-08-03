@@ -1,0 +1,113 @@
+.top-line
+  position: relative
+
+  &__main-bar
+    padding-top: 8px
+    padding-bottom: 8px
+    background-color: #FBF7FC
+    position: relative
+    z-index: 2
+    height: 64px
+
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 100%
+
+  &__button-search
+    display: flex
+    align-items: center
+
+    .svg-icon
+      stroke: #1E0B2E
+      fill: transparent
+
+  &__button-burger
+    flex: 0 0 32px
+    width: 32px
+    max-width: 32px
+    height: 32px
+    background-color: transparent
+    border: none
+    outline: none !important
+    position: relative
+    cursor: pointer
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      width: 24px
+      height: 2px
+      left: 50%
+      transform: translateX(-50%)
+      background-color: #1E0B2E
+
+    &:before
+      top: 10px
+
+    &:after
+      bottom: 10px
+
+  &__links
+    display: flex
+    align-items: center
+
+    a
+      font-size: 15px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1
+      letter-spacing: 0.5px
+      text-decoration: none
+      display: block
+      padding-top: 10px
+      padding-bottom: 12px
+      display: flex
+      align-items: center
+      margin-right: 50px
+
+      span
+        margin-right: 5px
+
+      .svg-icon
+        stroke: #1E0B2E
+        fill: #1E0B2E
+
+      &:last-child
+        margin-right: 0
+
+  &__nav-bar
+    border-bottom: 1px solid #ECE4F0
+    position: relative
+    z-index: 1
+    margin-top: -50px
+    visibility: hidden
+    transition: margin-top 0.4s, ease 0.4s
+
+    @media (max-width: 1023px)
+      position: absolute
+      top: 100%
+      left: 0
+      width: 100%
+      height: 100vh
+      background-color: #fff
+      z-index: 50
+      margin-top: 0
+      opacity: 0
+      transform: translateY(-50px)
+      transition: opacity 0.4s, transform 0.4s, ease 0.4s
+
+    &._is-show
+      margin-top: 0
+      visibility: visible
+
+      @media (max-width: 1023px)
+        opacity: 1
+        transform: translateY(0)
+
+    & ^[0]
+      &__inner
+        @media (max-width: 1023px)
+          flex-direction: column
+          align-items: flex-start
