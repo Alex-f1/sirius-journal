@@ -1,0 +1,214 @@
+.article-thumb
+  max-width: 385px
+  width: 100%
+  display: flex
+  text-align: center
+  text-decoration: none
+
+  @media (max-width: 1279px)
+    max-width: 330px
+    width: 100%
+
+  &:hover
+    & ^[0]
+      &__content
+        &:before
+          background-color: #C300FF
+
+      &__name
+        color: #8B00FD
+
+        &:before, &:after
+          opacity: 1
+          visibility: visible
+
+        &:before
+          left: -5px
+
+        &:after
+          right: -5px
+
+  &--no-img
+    & ^[0]
+      &__content
+        &:before
+          display: block
+
+  &__body
+    display: flex
+    flex-direction: column
+    width: 100%
+
+  &__img
+    text-align: center
+    max-width: 280px
+    width: 100%
+    margin-right: auto
+    margin: auto
+    display: block
+    margin-bottom: 25px
+
+    img
+      vertical-align: top
+
+  &__content
+    display: flex
+    flex-direction: column
+    position: relative
+
+    &:before
+      content: ''
+      position: absolute
+      top: -15px
+      left: 50%
+      transform: translateY(-50%)
+      width: 10px
+      height: 10px
+      background-color: #D3CED6
+      border-radius: 50%
+      transition: background-color 0.5s, ease 0.5s
+      display: none
+
+  &__icon
+    width: 48px
+    height: 48px
+    position: absolute
+    top: -48px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 3
+
+  &__name-video
+    font-size: 14px
+    color: #D3CED6
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1
+    text-align: center
+    letter-spacing: 4px
+    text-transform: uppercase
+    margin-top: 8px
+    padding-bottom: 8px
+
+  &__release
+    font-size: 20px
+    color: #1E0B2E
+    font-family: $fonts.textFont
+    font-weight: 400
+    line-height: 1
+    text-align: center
+    position: relative
+    display: inline-block
+    vertical-align: top
+    align-self: center
+    margin-top: 5px
+    margin-bottom: 15px
+    padding-right: 10px
+    padding-left: 10px
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 4px
+      height: 26px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+
+    &:before
+      left: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.38053 25L3 24.8326C2.09735 20.9814 1.63717 16.9814 1.63717 12.9814C1.63717 8.9814 2.09735 5 3 1.13023L2.38053 1C1.46018 4.90698 1 8.94419 1 13C1 17.0558 1.46018 21.093 2.38053 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.61947 25L1 24.8326C1.90265 20.9814 2.36283 16.9814 2.36283 12.9814C2.36283 8.9814 1.90265 5 1 1.13023L1.61947 1C2.53982 4.90698 3 8.94419 3 13C3 17.0558 2.53982 21.093 1.61947 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
+
+  &__name
+    font-size: 24px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1.2
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 10px
+    position: relative
+    transition: color 0.3s, ease 0.3s
+
+    @media (max-width: 1279px)
+      font-size: 20px
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 8px
+      height: 89px
+      transform: translateY(-50%)
+      opacity: 0
+      visibility: hidden
+      background-repeat: no-repeat
+      background-position: 0 0
+      transition: opacity 0.5s, left 0.5s, right 0.5s, ease 0.5s
+
+    &:before
+      left: -10px
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.70297 1C2.97927 14.9237 1 29.5016 1 44.5C1 59.4984 2.97927 74.0607 6.70297 88' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: -10px
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.15228 1C4.9705 14.9237 7 29.5016 7 44.5C7 59.4984 4.9705 74.0607 1.15228 88' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+  &__tags
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    margin-bottom: 15px
+
+  &__tag
+    font-size: 13px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1
+    text-align: center
+    letter-spacing: 0.5px
+    padding: 4px 8px
+    background-color: rgba(211, 206, 214, 0.16)
+    border-radius: 4px
+    margin-right: 15px
+
+    &:last-child
+      margin-right: 0
+
+  &__date
+    font-size: 14px
+    color: #D3CED6
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1
+    text-align: center
+    letter-spacing: 2px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    justify-content: center
+
+    i
+      flex: 0 0 4px
+      width: 4px
+      height: 4px
+      margin-right: 20px
+      margin-left: 20px
+      background-color: #D3CED6
+      border-radius: 50%
+
+    .time-icon
+      &:before
+        content: ''
+        width: 19px
+        height: 19px
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9.5' cy='9' r='8' stroke='%23D3CED6' stroke-width='2'/%3E%3Cpath d='M9.5 9H8.5V9.41421L8.79289 9.70711L9.5 9ZM10.5 5.5V4.5H8.5V5.5H10.5ZM11.2929 12.2071L12 12.9142L13.4142 11.5L12.7071 10.7929L11.2929 12.2071ZM10.5 9V5.5H8.5V9H10.5ZM8.79289 9.70711L11.2929 12.2071L12.7071 10.7929L10.2071 8.29289L8.79289 9.70711Z' fill='%23D3CED6'/%3E%3C/svg%3E%0A")
