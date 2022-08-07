@@ -1,0 +1,71 @@
+.all-articles
+  padding-top: 65px
+  padding-bottom: 70px
+  overflow: hidden
+
+  &__cols
+    display: flex
+
+    @media (max-width: 1279px)
+      flex-direction: column
+
+  &__col
+    flex: 0 0 385px
+    width: 385px
+    max-width: 385px
+    margin-right: 30px
+
+    @media (max-width: 1279px)
+      flex: none
+      width: 100%
+      max-width: 100%
+
+    &:last-child
+      margin-right: 0
+
+  &__items
+    @media (max-width: 1279px)
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+
+  &__item
+    margin-bottom: 70px
+
+    @media (max-width: 959px)
+      padding-right: 15px
+      padding-left: 15px
+      margin-bottom: 50px
+
+  &__button-more
+    width: 100%
+    max-width: 100%
+    min-width: auto
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &:before
+      content: ''
+      flex: 0 0 16px
+      width: 16px
+      max-width: 16px
+      height: 9px
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 1L8 7.5L1.5 1' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      order: 1
+      margin-left: 10px
+      transition: background 0.3s, ease 0.3s
+      position: relative
+      z-index: 1
+
+    &:after
+      transform-origin: center
+
+    &:hover
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 1L8 7.5L1.5 1' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E%0A")
+
+      &:after
+        transform: scale(7) translate(-8%, -8%)
