@@ -1,0 +1,155 @@
+.projects-news
+  padding-bottom: 60px
+
+  &__inner
+    max-width: 1540px + 8px + 8px
+    width: 100%
+    padding-right: 8px
+    padding-left: 8px
+    margin-right: auto
+    margin-left: auto
+    overflow: hidden
+
+  &__head
+    text-align: center
+    max-width: 1100px
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 40px
+
+  &__special-title
+    margin-bottom: 5px
+
+    img
+      vertical-align: top
+
+  &__title
+    font-size: 42px
+    color: #333
+    font-weight: 500
+    line-height: 1.1
+    text-transform: uppercase
+
+    @media (max-width: 767px)
+      font-size: 28px
+
+    @media (max-width: 374px)
+      font-size: 24px
+
+  &__container
+    padding-bottom: 40px !important
+    max-width: 1390px
+    overflow: visible !important
+
+    .swiper-button-prev, .swiper-button-next
+      height: 21px
+
+      &:after
+        content: ''
+        width: 26px
+        height: 48px
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-image: url("data:image/svg+xml,%3Csvg width='26' height='48' viewBox='0 0 26 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 1.5L3 24L24 46.5' stroke='%231E0B2E' stroke-width='4'/%3E%3C/svg%3E%0A")
+
+    .swiper-button-prev
+      left: -80px
+
+      @media (max-width: 1599px)
+        left: -6px
+
+    .swiper-button-next
+      right: -80px
+
+      @media (max-width: 1599px)
+        right: -6px
+
+      &:after
+        transform: rotate(180deg)
+
+    .swiper-pagination
+      bottom: 0 !important
+
+    .swiper-pagination-bullet
+      width: 6px
+      height: 6px
+      background-color: #D3CED6
+      border-radius: 4px
+      margin-right: 12px !important
+      margin-left: 0 !important
+      opacity: 1
+      transition: width 0.3s, ease 0.3s
+
+      &:last-child
+        margin-right: 0 !important
+
+      &.swiper-pagination-bullet-active
+        width: 96px
+
+  &__item
+    @media (min-width: 1600px)
+      opacity: 0
+      transition: opacity 1s, ease 1s
+
+    &:hover
+      .article-thumb
+        &--special
+          border-color: transparent
+          transition: border-color 0.2s, ease 0.2s
+
+    .article-thumb
+      &--special
+        max-width: 680px !important
+        min-height: 520px
+
+        .article-thumb__date
+          transition: color 1s, ease 1s
+
+    &.swiper-slide-active, &.swiper-slide-next
+      opacity: 1
+
+    &._is-active
+      .article-thumb
+        &--special
+          .article-thumb__name
+            color: #fff
+            transition: color 1s, ease 1s
+
+            &:before, &:after
+              transition: background 1s, left 0.5s, right 0.5s
+
+              @media (max-width: 1023px)
+                opacity: 1 !important
+                visibility: visible !important
+
+            &:before
+              background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.70297 1C2.97927 14.9237 1 29.5016 1 44.5C1 59.4984 2.97927 74.0607 6.70297 88' stroke='white' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+            &:after
+              background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.15228 1C4.9705 14.9237 7 29.5016 7 44.5C7 59.4984 4.9705 74.0607 1.15228 88' stroke='white' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+          .article-thumb__date
+            color: #fff
+
+            i
+              background-color: #fff
+
+  &__backdrop-fill
+    position: absolute
+    width: 680px
+    height: 521px
+    left: 0px
+    top: 0px
+    opacity: 0
+    visibility: hidden
+    background: radial-gradient(94.65% 211.33% at 5.35% 100%, #8B00FD 0%, #9C27FD 42.19%, #FBF7FC 100%)
+    border-radius: 24px
+    transition: left 1s, ease 1s
+
+    @media (max-width: 639px)
+      background: radial-gradient(98.65% 211.33% at 20.35% 100%, #8b00fd 0%, #9c27fd 42.19%, #fbf7fc 100%)
+
+    &._is-show
+      opacity: 1
+      visibility: visible

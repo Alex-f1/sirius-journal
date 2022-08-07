@@ -28,6 +28,21 @@
         &:after
           right: -5px
 
+  &--special
+    border: 1px solid #ECE4F0
+    border-radius: 24px
+    padding: 30px 20px 20px 20px
+
+    @media (max-width: 1279px)
+      max-width: 100%
+      width: 100%
+
+    & ^[0]
+      &__body
+        max-width: 385px
+        margin-right: auto
+        margin-left: auto
+
   &--no-img
     & ^[0]
       &__content
@@ -44,9 +59,8 @@
     max-width: 280px
     width: 100%
     margin-right: auto
-    margin: auto
+    margin: 0 auto 25px auto
     display: block
-    margin-bottom: 25px
 
     img
       vertical-align: top
