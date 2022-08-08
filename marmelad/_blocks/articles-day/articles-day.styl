@@ -28,6 +28,9 @@
       top: 0
       z-index: 50
 
+    @media (max-width: 1023px)
+      margin-bottom: 25px
+
   &__title
     line-height: 1.5
     position: relative
@@ -35,14 +38,12 @@
     vertical-align: top
     padding-right: 10px
     padding-left: 10px
-    
     margin-bottom: 0
     transition: letter-spacing 1s, ease-in 1s
 
     @media (max-width: 1023px)
       letter-spacing: 25px
       padding-left: 30px
-      margin-bottom: 25px
 
     &:before, &:after
       content: ''
@@ -140,9 +141,6 @@
 
   &__item
     margin-bottom: 70px
-
-    &:last-child
-      margin-bottom: 0
 
     @media (max-width: 959px)
       padding-right: 15px
