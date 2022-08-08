@@ -34,9 +34,6 @@ function projectsNewsSlider() {
 
     offsetLeft = $('.projects-news__item.swiper-slide-active').position().left;
     offsetLeftNext = $('.projects-news__item.swiper-slide-active').next().position().left;
-    // offsetLeftLast = $('.projects-news__item--last').position().left;
-
-    console.log(offsetLeft, offsetLeftNext,)
 
     $('.js-backdrop-fill').css({
       width: getWidthItem,
@@ -47,7 +44,6 @@ function projectsNewsSlider() {
   function hoverItem() {
     offsetLeft = $('.projects-news__item.swiper-slide-active').position().left;
     offsetLeftNext = $('.projects-news__item.swiper-slide-active').next().position().left;
-    // offsetLeftLast = $('.projects-news__item--last').position().left;
 
     $('.projects-news__item.swiper-slide-next').on('mouseover', function () {
       $(this).addClass('_is-active');
@@ -84,7 +80,6 @@ function projectsNewsSlider() {
     projectsNewsSlider.on('beforeTransitionStart', function () {
       offsetLeft = $('.projects-news__item.swiper-slide-active').position().left;
       offsetLeftNext = $('.projects-news__item').next().position().left;
-      // offsetLeftLast = $('.projects-news__item--last').position().left;
 
       $('.projects-news__item.swiper-slide-active').addClass('_is-active').siblings().removeClass('_is-active');
       $('.js-backdrop-fill').addClass('_is-show');

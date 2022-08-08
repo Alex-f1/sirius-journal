@@ -1,0 +1,64 @@
+.social-links
+  @media (max-width: 767px)
+    display: none
+
+  &--dark
+    & ^[0]
+      &__icon-light
+        img
+          opacity: 0
+
+  &__section
+    padding: 50px 55px
+
+    @media (max-width: 1279px)
+      padding: 40px
+
+    @media (max-width: 1023px)
+      padding: 45px 20px 35px 20px
+
+  &__title
+    font-size: 42px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1.2
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 20px
+    transition: color 1s, ease 1s
+
+  &__items
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__item
+    flex: 0 0 48px
+    width: 48px
+    max-width: 48px
+    height: 48px
+    margin-right: 16px
+    position: relative
+    display: block
+
+    &:last-child
+      margin-right: 0
+
+  &__icon
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+
+    img
+      vertical-align: top
+      transition: opacity 1s, ease 1s
+      position: absolute
+      top: 0
+      left: 0
+      opacity: 0
+
+  &__icon-dark
+    opacity: 1 !important

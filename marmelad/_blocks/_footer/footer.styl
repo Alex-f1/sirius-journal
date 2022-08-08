@@ -1,2 +1,329 @@
 .footer
-  flex none
+  flex: none
+  padding-top: 70px
+
+  @media (max-width: 1279px)
+    padding-top: 30px
+
+  &__top
+    max-width: 1355px + 8px + 8px
+    width: 100%
+    padding-right: 8px
+    padding-left: 8px
+    margin-left: auto
+    margin-right: auto
+    padding-bottom: 70px
+
+  &__middle
+    color: #fff
+    background-color: #1E0B2E
+    padding-top: 30px
+    padding-bottom: 30px
+    padding-right: 20px
+    padding-left: 20px
+
+    .social-links
+      display: block
+      margin-bottom: 50px
+
+      @media (min-width: 768px)
+        display: none
+
+      &__section
+        padding: 0
+
+      &__item
+        margin-right: 40px
+
+        @media (max-width: 374px)
+          margin-right: 20px
+
+      &__icon
+        img
+          opacity: 1
+
+  &__bottom
+    color: #D3CED6
+    background-color: #000
+    padding-top: 25px
+    padding-bottom: 25px
+    padding-right: 20px
+    padding-left: 20px
+
+  &__cols
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: relative
+
+    @media (max-width: 1279px)
+      flex-wrap: wrap
+
+  &__col
+    position: relative
+    z-index: 2
+
+    @media (max-width: 767px)
+      width: 100%
+      max-width: 100%
+
+    &:last-child
+      @media (max-width: 767px)
+        display: none
+
+    &--fill
+      flex: 0 0 490px
+      width: 490px
+      max-width: 490px
+      min-height: 350px
+      border-radius: 32px
+
+      @media (max-width: 1279px)
+        flex: none
+        width: 50%
+        max-width: none
+
+      &._is-active
+        .newsletter-form
+          &__title
+            color: #fff
+
+          &__input
+            input
+              color: #fff
+              border-bottom-color: #fff
+
+            ::placeholder
+              color: #fff
+
+          &__button-ok
+            color: #fff
+            border-color: #fff
+
+          &__note
+            color: #fff
+
+            a
+              color: #fff
+
+        .social-links
+          &__title
+            color: #fff
+
+          &__icon-light
+            opacity: 1 !important
+
+          &__icon-dark
+            opacity: 0 !important
+
+    &--info
+      flex: 0 0 180px
+      width: 180px
+      max-width: 180px
+
+      @media (max-width: 1279px)
+        flex: none
+        width: 100%
+        max-width: 100%
+        order: -1
+        margin-bottom: 30px
+
+  &__backdrop-fill
+    position: absolute
+    width: 490px
+    height: 350px
+    left: 0px
+    top: 0px
+    opacity: 0
+    visibility: hidden
+    background: radial-gradient(94.65% 211.33% at 5.35% 100%, #8B00FD 0%, #9C27FD 42.19%, #FBF7FC 100%)
+    border-radius: 24px
+    transition: left 0.5s, ease 0.5s
+
+    @media (max-width: 1279px)
+      background: radial-gradient(98.65% 211.33% at 20.35% 100%, #8b00fd 0%, #9c27fd 42.19%, #fbf7fc 100%)
+      display: none
+
+    &._is-show
+      opacity: 1
+      visibility: visible
+
+  &__title
+    font-size: 24px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1.1
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 15px
+
+  &__desc
+    font-size: 14px
+    color: #1E0B2E
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1.2
+    text-align: center
+    letter-spacing: 2px
+    text-transform: uppercase
+    padding-left: 18px
+    padding-right: 18px
+    position: relative
+    width: 150px
+    margin-left: auto
+    margin-right: auto
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 8px
+      height: 100px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+
+    &:before
+      left: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='101' viewBox='0 0 8 101' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0.5C3.08235 16.5043 1 33.2605 1 50.5C1 67.7395 3.08235 84.4778 7 100.5' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='101' viewBox='0 0 8 101' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 0.5C4.91765 16.5043 7 33.2605 7 50.5C7 67.7395 4.91765 84.4778 1 100.5' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+  &__logo
+    display: flex
+    justify-content: center
+    margin-bottom: 50px
+
+    img
+      vertical-align: top
+
+  &__menu
+    margin-bottom: 50px
+
+    @media (max-width: 767px)
+      display: none
+
+  &__nav
+    > ul
+      list-style: none
+      display: flex
+      padding-left: 0
+      margin: 0
+
+      > li
+        width: 25%
+        margin-right: 30px
+
+        &:last-child
+          margin-right: 0
+
+        > a
+          font-size: 24px
+          color: #FFF
+          font-weight: 500
+          line-height: 1.2
+          text-transform: uppercase
+          text-decoration: none
+
+          &:hover
+            text-decoration: underline
+
+        ul
+          list-style: none
+          padding-left: 0
+          margin: 0
+          padding-top: 5px
+
+          li
+            margin-bottom: 10px
+
+            a
+              font-size: 15px
+              color: #D3CED6
+              line-height: 1.2
+              letter-spacing: 0.2px
+              text-decoration: none
+
+              &:hover
+                text-decoration: underline
+
+  &__button-go-to-top
+    &.button-default
+      color: #D3CED6
+      max-width: 1215px
+      width: 100%
+      min-width: auto
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 1px solid #D3CED6
+      margin-left: auto
+      margin-right: auto
+
+    &:before
+      content: ''
+      flex: 0 0 15px
+      width: 15px
+      max-width: 15px
+      height: 10px
+      background-image: url("data:image/svg+xml,%3Csvg width='15' height='10' viewBox='0 0 15 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 8.5L7.5 2L1 8.5' stroke='%23D3CED6' stroke-width='2'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      order: 1
+      margin-left: 10px
+      transition: background 0.3s, ease 0.3s
+      position: relative
+      z-index: 1
+
+    &:after
+      transform-origin: center
+
+    &:hover
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg width='15' height='10' viewBox='0 0 15 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 8.5L7.5 2L1 8.5' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+
+      &:after
+        transform: scale(7) translate(-8%, -8%)
+
+  &__info
+    @media (max-width: 767px)
+      display: flex
+      flex-direction: column
+      align-items: center
+
+    span, a
+      font-size: 12px
+      color: #D3CED6
+      font-weight: 500
+      line-height: 1.2
+      text-decoration: underline
+
+    span
+      margin-right: 150px
+
+      @media (max-width: 1023px)
+        margin-right: 100px
+
+      @media (max-width: 767px)
+        margin-right: 0
+        margin-bottom: 20px
+
+    a
+      margin-right: 150px
+
+      @media (max-width: 1023px)
+        margin-right: 100px
+
+      @media (max-width: 767px)
+        margin-right: 0
+        margin-bottom: 20px
+
+      &:last-child
+        margin-right: 0
+        margin-bottom: 0
+
+      &:hover
+        text-decoration: none
