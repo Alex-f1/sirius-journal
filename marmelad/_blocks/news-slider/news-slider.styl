@@ -1,9 +1,11 @@
 .news-slider
   padding-top: 125px
+  height: 656px
 
   @media (max-width: 959px)
     padding-top: 0
     margin-bottom: 55px
+    height: auto
 
   &__container
     @media (max-width: 959px)
@@ -20,32 +22,32 @@
       padding-left: 15px
 
     .swiper-pagination-bullet
-      background-color transparent
+      background-color: transparent
       border-radius: 4px
       flex: 1 1 auto
       margin-right: 4px
       overflow: hidden
       opacity: 1
-      padding-top 15px
-      padding-bottom 15px
-      position relative
+      padding-top: 15px
+      padding-bottom: 15px
+      position: relative
+
       &:after
         content: ''
-        position absolute
-        top 50%
-        left 0
+        position: absolute
+        top: 50%
+        left: 0
         transform: translateY(-50%)
-        width 100%
-        height 4px
+        width: 100%
+        height: 4px
         border-radius: 4px
-
         background-color: rgba(255, 255, 255, 0.5)
 
       &:last-child
         margin-right: 0
 
       span
-        position absolute
+        position: absolute
         top: 50%
         left: 0
         transform: translateY(-50%)
@@ -53,7 +55,6 @@
         width: 0
         height: 4px
         border-radius: 4px
-
         background-color: #fff
 
       &.swiper-pagination-bullet-active

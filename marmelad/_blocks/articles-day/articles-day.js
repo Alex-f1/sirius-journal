@@ -1,7 +1,7 @@
 function titleArticlesAnimate() {
   
   const getOffsetArticlesDayBlack = $('.articles-day').offset().top - 300; 
-  const getOffsetOtherBlack = $('.other-articles').offset().top - 800; 
+  const getOffsetOtherBlack = $('.other-articles').offset().top - 200; 
   
   $(window).on('scroll', function() {
     if ($(this).scrollTop() >= getOffsetArticlesDayBlack) {

@@ -1,6 +1,12 @@
 .other-articles
+  padding-top: 90px
   padding-bottom: 80px
-  overflow: hidden
+  position: relative
+  z-index: 60
+  background-color: #fff
+
+  @media (max-width: 1279px)
+    overflow: hidden
 
   @media (max-width: 959px)
     padding-bottom: 40px
@@ -28,7 +34,6 @@
       vertical-align: top
       border: 0.7px solid #ECE4F0
 
-
       @media (max-width: 480px)
         width: 1210px
         max-width: none
@@ -39,6 +44,19 @@
   &__inner
     text-align: center
 
+  &__head
+    text-align: center
+    background-color: #fff
+    width: 100%
+    padding-top: 20px
+    padding-bottom: 10px
+    margin-bottom: 50px
+
+    @media (min-width: 1280px)
+      position: sticky
+      top: 0
+      z-index: 50
+
   &__title
     line-height: 1.5
     position: relative
@@ -46,7 +64,7 @@
     vertical-align: top
     padding-right: 10px
     padding-left: 10px
-    margin-bottom: 50px
+    margin-bottom: 0
     transition: letter-spacing 1s, ease-in 1s
 
     @media (max-width: 1023px)

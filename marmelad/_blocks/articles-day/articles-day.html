@@ -1,12 +1,16 @@
 <div block="articles-day">
   <div elem="section">
-    <div elem="inner" class="contain">
+    <div elem="head">
       <h2 elem="title">Картина дня</h2>
+    </div>
+    <div elem="inner" class="contain">
       <div elem="cols">
         <div elem="col" mods="slider">
-          {% include "news-slider.html" %}
+          <div elem="slider-wrapper">
+            {% include "news-slider.html" %}
+          </div>
         </div>
-        <div elem="col" mods="left">
+        <div elem="col" mods="left"  class="slow">
           <div elem="items">
             <div elem="item">
               <a block="article-thumb" href="#">
@@ -85,7 +89,7 @@
           </div>
         </div>
         <div elem="col" mods="right">
-          <div elem="items">
+          <div elem="items"  id="featured-content-grid-wrapper">
             <div elem="item">
               <a block="article-thumb" href="#">
                 <span elem="body">
