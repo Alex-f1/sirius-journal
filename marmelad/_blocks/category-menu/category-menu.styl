@@ -1,0 +1,203 @@
+.category-menu
+  position: fixed
+  top: 64px
+  left: 0
+  width: 100%
+  height: 100vh
+  background-color: #fff
+  z-index: 100
+  opacity: 0
+  visibility: hidden
+  transform: translateY(-50px)
+  transition: opacity 0.4s, transform 0.4s, ease 0.4s
+
+  &._is-show
+    opacity: 1
+    visibility: visible
+    transform: translateY(0)
+
+  &__section
+    height: 100%
+    overflow-y: auto
+    padding-bottom: 75px
+
+  &__nav
+    ul
+      list-style: none
+      padding-left: 0
+      margin: 0
+
+      li
+        border-bottom: 1px solid #ECE4F0
+
+        a
+          font-size: 32px
+          color: #1E0B2E
+          font-weight: 500
+          line-height: 1.1
+          text-decoration: none
+          position: relative
+          display: flex
+          padding-top: 20px
+          padding-bottom: 20px
+
+          @media (max-width: 767px)
+            font-size: 24px
+
+          &:before
+            content: ''
+            position: absolute
+            right: 50%
+            left: initial
+            bottom: 0
+            width: 0
+            height: 2px
+            background-color: #9900FF
+            transform: translateX(50%)
+            transition: width 0.5s, ease-in 0.5s
+
+          &:hover
+            &:before
+              // right: initial
+              // left: 50%
+              width: 100%
+
+          span
+            max-width: 1216px + 8px + 8px
+            width: 100%
+            padding-right: 20px
+            padding-left: 20px
+            margin-right: auto
+            margin-left: auto
+            display: flex
+            align-items: flex-start
+
+            @media (max-width: 767px)
+              align-items: center
+
+            small
+              font-size: 13px
+              color: #9900FF
+              font-weight: 500
+              line-height: 1
+              text-align: center
+              letter-spacing: 0.2px
+              padding: 4px 8px
+              background: rgba(211, 206, 214, 0.16)
+              border-radius: 4px
+              margin-left: 10px
+
+              @media (max-width: 767px)
+                margin-left: auto
+
+            .svg-icon
+              stroke: #1E0B2E
+              fill: #1E0B2E
+              margin-left: 5px
+              align-self: center
+
+              @media (max-width: 767px)
+                order: 2
+
+            &:after
+              content: ''
+              flex: 0 0 9px
+              width: 9px
+              max-width: 9px
+              height: 15px
+              background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 13.75L7.25 7.25L0.75 0.75' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+              background-repeat: no-repeat
+              background-position: 0 0
+              background-size: contain
+              align-self: center
+              margin-left: auto
+              margin-right: 8px
+
+              @media (max-width: 767px)
+                margin-left: 10px
+                order: 3
+
+          &.color-mode
+            color: #2E9500
+
+            small
+              color: #2E9500
+
+        &:nth-last-child(3)
+          a
+            span
+              &:after
+                display: none
+
+        &:nth-last-child(2)
+          a
+            span
+              &:after
+                display: none
+
+              .svg-icon
+                @media (max-width: 767px)
+                  margin-left: auto
+
+        &:nth-last-child(1)
+          a
+            span
+              &:after
+                display: none
+
+  &__bottom
+    display: flex
+    align-items: center
+    padding-top: 25px
+    padding-bottom: 25px
+
+    @media (max-width: 767px)
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+
+    &.contain
+      padding-right: 20px
+      padding-left: 20px
+
+    .social-links
+      display: block !important
+
+      @media (max-width: 767px)
+        margin-bottom: 60px
+
+      &__section
+        padding: 0
+
+  &__other-links
+    display: flex
+    align-items: center
+    margin-left: auto
+    width: 490px
+    justify-content: space-between
+
+    @media (max-width: 1023px)
+      width: auto
+
+    @media (max-width: 767px)
+      flex-direction: column
+      justify-content: flex-start
+      margin-left: 0
+
+    a
+      font-size: 12px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1
+      text-decoration: underline
+      margin-right: 20px
+
+      @media (max-width: 767px)
+        margin-right: 0
+        margin-bottom: 25px
+
+      &:last-child
+        margin-right: 0
+
+      &:hover
+        text-decoration: none

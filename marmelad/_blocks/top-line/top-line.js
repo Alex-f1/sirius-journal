@@ -1,3 +1,5 @@
 $('.js-button-burger').on('click', function() {
-  $('.js-nav-bar').toggleClass('_is-show')
+  $(this).toggleClass('_is-active');
+  $('.category-menu').toggleClass('_is-show');
+  $('html').toggleClass('_is-lock');
 });
