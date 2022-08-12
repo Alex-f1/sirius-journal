@@ -38,6 +38,10 @@
     position: relative
     cursor: pointer
 
+    &:hover
+      &:before, &:after
+        background-color: #9900FF
+
     &:before, &:after
       content: ''
       position: absolute
@@ -46,7 +50,7 @@
       left: 50%
       transform: translateX(-50%)
       background-color: #1E0B2E
-      transition: transform 0.3s, ease 0.3s
+      transition: transform 0.3s, background 0.3s, ease 0.3s
 
     &:before
       top: 10px

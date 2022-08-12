@@ -33,8 +33,8 @@ $(function() {
     function hoverFooterCol() {
   
       $(window).on('load resize', function () {
-        let getWidthItem = $('.footer__col._is-active').width();
-        let getHeightItem = $('.footer__col._is-active').height();
+        let getWidthItem = $('.footer__col--fill').width();
+        let getHeightItem = $('.footer__col--fill').height();
   
   
         $('.js-backdrop-fill-footer').css({
@@ -43,14 +43,13 @@ $(function() {
         })
       });
       
-      $('.footer__col').not('.footer__col--info').each(function() {
+      $('.footer__col--fill').each(function() {
         let $thisElem = $(this);
   
         $thisElem.on('mouseover', function () {
           $thisElem.addClass('_is-active');
-          $('.js-backdrop-fill-footer').addClass('_is-show');
-          $('.js-backdrop-fill-footer').css('left', offsetFooterColLeft);
-          offsetFooterColLeft = $('.footer__col._is-active').position().left;
+          offsetFooterColLeft = $thisElem.position().left;
+          $('.js-backdrop-fill-footer').addClass('_is-show').css('left', offsetFooterColLeft);
         });
         $thisElem.on('mouseleave', function () {
           $thisElem.removeClass('_is-active');
