@@ -1,6 +1,6 @@
 .news-slider
   padding-top: 125px
-  height: 700px
+  height: 800px
 
   @media (max-width: 959px)
     padding-top: 0
@@ -227,6 +227,7 @@
     transition: all 0.2s ease
     opacity: 0
     visibility: hidden
+    display: none
 
   .prev
     left: 15px
@@ -262,46 +263,88 @@
       padding-top: 20px
       text-align: center
 
-      &:before
-        content: ''
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 100%
-        height: 50%
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.5) 81.77%)
-        opacity: 0.8
-        filter: blur(32px)
+      &:nth-child(1), &:nth-child(2)
+        &:before
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.5) 81.77%)
+          opacity: 0.8
+          filter: blur(32px)
 
-        @media (max-width: 959px)
-          display: none
+          @media (max-width: 959px)
+            display: none
 
-      &:after
-        content: ''
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 100%
-        height: 50%
-        background: linear-gradient(180deg, #C300FF 0%, #C300FF 62.5%)
-        opacity: 0.4
-        filter: blur(32px)
+        &:after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(180deg, #C300FF 0%, #C300FF 62.5%)
+          opacity: 0.4
+          filter: blur(32px)
 
-        @media (max-width: 959px)
-          display: none
+          @media (max-width: 959px)
+            display: none
 
-      .fill-card
-        position: absolute
-        bottom: 0
-        left: 0
-        width: 100%
-        height: 50%
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.5) 81.77%)
-        opacity: 1
-        filter: blur(32px)
+        .fill-card
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
+          box-shadow: inset 0px 4px 250px rgba(139, 0, 253, 0.1)
 
-        @media (max-width: 959px)
-          display: none
+          @media (max-width: 959px)
+            display: none
+
+      &:nth-child(3)
+        &:before
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.5) 81.77%)
+          opacity: 0.8
+          filter: blur(32px)
+
+          @media (max-width: 959px)
+            display: none
+
+        &:after
+          content: ''
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(180deg, #C300FF 0%, #C300FF 62.5%)
+          opacity: 0.4
+          filter: blur(32px)
+
+          @media (max-width: 959px)
+            display: none
+
+        .fill-card
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 50%
+          background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(180deg, rgba(0, 0, 0, 0) 59.9%, rgba(0, 0, 0, 0.5) 81.77%)
+          opacity: 1
+          filter: blur(32px)
+
+          @media (max-width: 959px)
+            display: none
 
       &:nth-child(1)
         bottom: 32px * 2
@@ -321,23 +364,13 @@
 
         &:before, &:after, .fill-card
           opacity: 0
+          visibility: hidden
 
         img
           opacity: 1
 
         &:after
           display: none
-
-  &:hover
-    .buttons.prev
-      opacity: 1
-      visibility: visible
-      animation: bounceInLeft 500ms
-
-    .buttons.next
-      opacity: 1
-      visibility: visible
-      animation: bounceInRight 500ms
 
 .transformThis
   animation: scaleDown 500ms

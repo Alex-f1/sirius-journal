@@ -46,30 +46,97 @@ function cardNews() {
 
   const lastCard = $('.card-list .card').length - 1;
 
-  $('.next').click(function (event) {
-    event.preventDefault();
-    var prependList = function () {
-      if ($('.card').hasClass('activeNow')) {
-        var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
-        $('.card-list').prepend($slicedCard);
-      }
+  var articlesDay = $('.articles-day__inner');
+  var articlesDaySlider = $('.articles-day__col--slider');
+  var articlesDayColsLeft = $('.articles-day__col--left .articles-day__items');
+  var articlesDayColsRight = $('.articles-day__col--right .articles-day__items');
+  var outerHeightLeft = articlesDayColsLeft.outerHeight();
+  var outerHeightRight = articlesDayColsRight.outerHeight();
+  var lrDif = outerHeightRight - outerHeightLeft;
+  var lrDifSpeed = 0;
+  articlesDay.css('height', outerHeightLeft);
+  articlesDaySlider.css('height', outerHeightLeft);
+  let windowHeight = window.innerHeight;
+
+  var articlesDayTop = articlesDay.offset().top;
+  let scrollYRelease = articlesDayTop + outerHeightLeft - windowHeight + 200;
+  let scrollDiff = outerHeightLeft - windowHeight;
+  
+  var cards = $('.card');
+
+  var sliderStep = 150 / cards.length;
+
+  var sliderCurrent = 0;
+ 
+  $(window).scroll(function () {
+    if (articlesDayTop >= window.pageYOffset) {
+      articlesDayColsRight.css({
+        transform: 'translateY(0)',
+      });
     }
-    $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
-    setTimeout(function () { prependList(); }, 200);
+
+    if (scrollYRelease <= window.pageYOffset) {
+      console.log(window.pageYOffset);
+    }
+
+    //start
+    if (articlesDayTop <= window.pageYOffset && scrollYRelease > window.pageYOffset) {
+      let progress = (window.pageYOffset - articlesDayTop) / (scrollDiff / 100);
+      let progressPath = (lrDif + lrDifSpeed) / 100 * progress;
+      
+      if (progressPath > lrDif) {
+        progressPath = lrDif;
+      }
+
+      if (progressPath <= 0) {
+        progressPath = 0;
+      }
+
+      articlesDayColsRight.css({
+        transform: 'translateY(-' + progressPath + 'px)',
+      });
+      
+      var slideIndex = parseInt(progress / sliderStep);
+      
+      if (slideIndex != sliderCurrent) {
+        sliderCurrent = slideIndex;
+        var prependList = function () {
+          if ($('.card').hasClass('activeNow')) {
+            var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
+            $('.card-list').prepend($slicedCard);
+          }
+        }
+        $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
+        setTimeout(function () { prependList(); }, 200);
+      }
+      
+    }      
   });
 
-  $('.prev').click(function (event) {
-    event.preventDefault();
-    var appendToList = function () {
-      if ($('.card').hasClass('activeNow')) {
-        var $slicedCard = $('.card').slice(0, 1).addClass('transformPrev');
-        $('.card-list').append($slicedCard);
-      }
-    }
+  // $('.next').click(function (event) {
+  //   event.preventDefault();
+  //   var prependList = function () {
+  //     if ($('.card').hasClass('activeNow')) {
+  //       var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
+  //       $('.card-list').prepend($slicedCard);
+  //     }
+  //   }
+  //   $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
+  //   setTimeout(function () { prependList(); }, 200);
+  // });
 
-    $('.card').removeClass('transformPrev').last().addClass('activeNow').prevAll().removeClass('activeNow');
-    setTimeout(function () { appendToList(); }, 200);
-  });
+  // $('.prev').click(function (event) {
+  //   event.preventDefault();
+  //   var appendToList = function () {
+  //     if ($('.card').hasClass('activeNow')) {
+  //       var $slicedCard = $('.card').slice(0, 1).addClass('transformPrev');
+  //       $('.card-list').append($slicedCard);
+  //     }
+  //   }
+
+  //   $('.card').removeClass('transformPrev').last().addClass('activeNow').prevAll().removeClass('activeNow');
+  //   setTimeout(function () { appendToList(); }, 200);
+  // });
 }
 
 if (window.matchMedia("(min-width: 960px)").matches) {
