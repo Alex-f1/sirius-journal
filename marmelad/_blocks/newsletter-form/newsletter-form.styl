@@ -52,40 +52,42 @@
     display: flex
     align-items: center
 
+    @media (min-width: 1024px)
+      background-color: rgba(211, 206, 214, 0.16)
+      border-radius: 27px
+
     @media (max-width: 1023px)
       flex-direction: column
 
   &__input
-    // flex: 0 0 285px
-    // width: 285px
-    // max-width: 285px
+    width: 100%
+
     @media (max-width: 1023px)
-      width: 100%
       margin-bottom: 25px
 
     input
-      font-size: 24px
-      color: #1E0B2E
+      font-size: 15px
+      color: #fff
       font-weight: 500
       line-height: 1
       width: 100%
-      height: 50px
+      height: 54px
+      padding-right: 100px
+      padding-left: 25px
       border: none
       background-color: transparent
-      border-bottom: 2px solid #1E0B2E
       outline: none !important
       transition: color 1s, border-color 1s, ease 1s
 
-      @media (max-width: 1279px)
-        color: #fff
-        border-color: #fff
+      @media (max-width: 1023px)  
+        background-color: rgba(211, 206, 214, 0.16)
+        border-radius: 27px
 
     ::placeholder
-      font-size: 24px
+      font-size: 15px
       color: #1E0B2E
       font-weight: 500
       line-height: 1
-      text-transform: uppercase
       transition: color 1s, ease 1s
 
       @media (max-width: 1279px)
@@ -110,12 +112,16 @@
           @media (max-width: 1023px)
             transform: scale(4) translate(-8%, -8%)
 
+    &:hover
+      border-color: #8B00FD !important
+
   &__note
     font-size: 13px
+    color: #1E0B2E
     font-weight: 500
     line-height: 1.2
     letter-spacing: 0.5px
-    color: #1E0B2E
+    padding-left: 25px
     transition: color 1s, ease 1s
     position: relative
     z-index: 2
