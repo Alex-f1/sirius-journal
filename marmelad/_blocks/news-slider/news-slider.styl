@@ -2,13 +2,13 @@
   padding-top: 125px
   height: 800px
 
-  @media (max-width: 959px)
+  @media (max-width: 1279px)
     padding-top: 0
     margin-bottom: 55px
     height: auto
 
   &__container
-    @media (max-width: 959px)
+    @media (max-width: 1279px)
       border-radius: 20px
       height: 575px
 
@@ -67,14 +67,14 @@
           animation-fill-mode: forwards
 
   &__items
-    @media (max-width: 959px)
+    @media (max-width: 1279px)
       height: 575px !important
 
   &__item
     border-radius: 20px
     overflow: hidden
 
-    @media (max-width: 959px)
+    @media (max-width: 1279px)
       border-radius: 0
 
   &__body
@@ -86,7 +86,7 @@
     overflow: hidden
     display: block
 
-    @media (max-width: 959px)
+    @media (max-width: 1279px)
       border-radius: 0
 
     &:after
@@ -123,7 +123,7 @@
     width: 100%
     padding: 40px
 
-    @media (max-width: 959px)
+    @media (max-width: 1279px)
       padding: 30px 20px
       z-index: 5
 
@@ -272,6 +272,9 @@
         .news-slider__content
           z-index: 5
 
+      &.transformPrev
+        z-index: 5
+
       &:nth-child(1), &:nth-child(2)
         &:before
           content: ''
@@ -284,7 +287,7 @@
           opacity: 0.8
           filter: blur(32px)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
         &:after
@@ -298,7 +301,7 @@
           opacity: 0.4
           filter: blur(32px)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
         .fill-card
@@ -310,7 +313,7 @@
           background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
           box-shadow: inset 0px 4px 250px rgba(139, 0, 253, 0.1)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
       &:nth-child(3)
@@ -325,7 +328,7 @@
           opacity: 0.8
           filter: blur(32px)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
         &:after
@@ -339,7 +342,7 @@
           opacity: 0.4
           filter: blur(32px)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
         .fill-card
@@ -352,7 +355,7 @@
           opacity: 1
           filter: blur(32px)
 
-          @media (max-width: 959px)
+          @media (max-width: 1279px)
             display: none
 
       &:nth-child(1)
@@ -382,7 +385,7 @@
           display: none
 
         .news-slider__content
-          z-index: 5  
+          z-index: 5
 
 .transformThis
   animation: scaleDown 500ms

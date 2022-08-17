@@ -1,0 +1,271 @@
+.article-content
+  padding-top: 30px
+  padding-bottom: 40px
+
+  &__inner
+    max-width: 1010px + 8px + 8px
+    width: 100%
+    padding-right: 8px
+    padding-left: 8px
+    margin-right: auto
+    margin-left: auto
+
+  &__head
+    text-align: center
+
+    h1
+      font-size: 42px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1.2
+      text-align: center
+      text-transform: uppercase
+      margin-top: 0
+      margin-bottom: 10px
+
+  &__date
+    font-size: 14px
+    color: #D3CED6
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1
+    text-align: center
+    letter-spacing: 2px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 10px
+
+    i
+      flex: 0 0 4px
+      width: 4px
+      height: 4px
+      margin-right: 20px
+      margin-left: 20px
+      background-color: #D3CED6
+      border-radius: 50%
+
+  &__poster
+    border-radius: 32px
+    overflow: hidden
+    width: 100%
+    height: 480px
+
+    img
+      width: 100%
+      height: 100%
+      vertical-align: top
+      object-fit: cover
+      object-position: center center
+
+  &__info
+    padding: 8px 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__author
+    display: flex
+    align-items: center
+
+  &__author-pic
+    flex: 0 0 48px
+    width: 48px
+    max-width: 48px
+    height: 48px
+    border-radius: 50%
+    border: 3px solid #F2F2F2
+
+    img
+      vertical-align: top
+
+  &__author-name
+    color: #1E0B2E
+
+    strong
+      font-size: 14px
+      font-family: $fonts.additionalFont
+      font-weight: 400
+      line-height: 1.1
+      display: block
+
+    span
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.1
+      display: block
+
+  &__reading-time
+    font-size: 14px
+    color: #1E0B2E
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1.1
+    letter-spacing: 5px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    margin-right: 75px
+
+    &:before
+      content: ''
+      flex: 0 0 25px
+      width: 25px
+      max-width: 25px
+      height: 25px
+      background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12.5' cy='12' r='8' stroke='%231E0B2E' stroke-width='2'/%3E%3Cpath d='M12.5 12H11.5V12.4142L11.7929 12.7071L12.5 12ZM13.5 8.5V7.5H11.5V8.5H13.5ZM14.2929 15.2071L15 15.9142L16.4142 14.5L15.7071 13.7929L14.2929 15.2071ZM13.5 12V8.5H11.5V12H13.5ZM11.7929 12.7071L14.2929 15.2071L15.7071 13.7929L13.2071 11.2929L11.7929 12.7071Z' fill='%231E0B2E'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-size: contain
+      background-position: 0 0
+      margin-right: 8px
+
+  &__poster-name
+    color: #1E0B2E
+    text-align: right
+
+    strong
+      font-size: 14px
+      font-family: $fonts.additionalFont
+      font-weight: 400
+      line-height: 1.1
+      display: block
+
+    span
+      font-size: 14px
+      font-weight: 500
+      line-height: 1.1
+      display: block
+
+  &__content
+    max-width: 700px + 8px + 8px
+    width: 100%
+    padding-top: 15px
+    padding-right: 8px
+    padding-left: 8px
+    margin-right: auto
+    margin-left: auto
+
+    h2
+      font-size: 32px
+      line-height: 1.1
+      text-align: left
+      letter-spacing: 0
+      text-transform: none
+
+    h3
+      font-size: 28px
+      color: #000
+      font-family: $fonts.textFont
+      font-weight: 400
+      line-height: 1.2
+      margin-top: 0
+      margin-bottom: 30px
+
+    p
+      font-size: 20px
+      color: #000
+      font-family: $fonts.textFont
+      font-weight: 400
+      line-height: 1.2
+      margin-top: 0
+      margin-bottom: 30px
+
+      a
+        color: #9900FF
+        text-decoration: none
+        border-bottom: 2px solid #9900FF
+        transition: border-color 0.3s, ease 0.3s
+
+        &:hover
+          border-color: transparent
+
+      &.important-text
+        font-size: 32px
+        text-align: center
+        max-width: 600px
+        width: 100%
+        padding: 50px 20px
+        margin-right: auto
+        margin-left: auto
+        position: relative
+
+        &:before, &:after
+          content: ''
+          position: absolute
+          top: 50%
+          width: 8px
+          height: 102px
+          transform: translateY(-50%)
+          background-repeat: no-repeat
+          background-position: 0 0
+          transition: opacity 0.5s, left 0.5s, right 0.5s, ease 0.5s
+
+        &:before
+          left: -10px
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='102' viewBox='0 0 8 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1C3.08235 17.0043 1 33.7605 1 51C1 68.2395 3.08235 84.9778 7 101' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+        &:after
+          right: -10px
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='102' viewBox='0 0 8 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1C4.91765 17.0043 7 33.7605 7 51C7 68.2395 4.91765 84.9778 1 101' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+  &__video
+    width: 100%
+    height: 390px
+    position: relative
+    cursor: pointer
+    margin-bottom: 65px
+    z-index: 3
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center center
+      vertical-align: top
+      position: absolute
+      top: 0
+      left: 0
+
+    iframe, video
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center center
+      vertical-align: top
+      position: absolute
+      top: 0
+      left: 0
+
+    span
+      font-size: 13px
+      color: #857B8A
+      font-weight: 500
+      line-height: 1.1
+      letter-spacing: 0.5px
+      position: absolute
+      bottom: -25px
+      left: 0
+
+  &__list
+    ol
+      font-size: 20px
+      color: #9900FF
+      font-family: $fonts.textFont
+      font-weight: 400
+      line-height: 1.1
+      padding-left: 35px
+      margin: 0
+
+      li
+        margin-bottom: 30px
+        padding-left: 8px
+
+        span
+          font-size: 20px
+          color: #000
+          font-family: $fonts.textFont
+          font-weight: 400
+          line-height: 1.2
+          margin-top: 0
+          margin-bottom: 30px

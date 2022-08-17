@@ -64,9 +64,11 @@ function cardNews() {
   
   var cards = $('.card');
 
-  var sliderStep = 150 / cards.length;
+  var sliderStep = parseInt(160 / cards.length);
 
   var sliderCurrent = 0;
+  
+  var scrollPos = 0;
  
   $(window).scroll(function () {
     if (articlesDayTop >= window.pageYOffset) {
@@ -75,9 +77,9 @@ function cardNews() {
       });
     }
 
-    if (scrollYRelease <= window.pageYOffset) {
+    /* if (scrollYRelease <= window.pageYOffset) {
       console.log(window.pageYOffset);
-    }
+    } */
 
     //start
     if (articlesDayTop <= window.pageYOffset && scrollYRelease > window.pageYOffset) {
@@ -97,8 +99,10 @@ function cardNews() {
       });
       
       var slideIndex = parseInt(progress / sliderStep);
+
+      var scrollTop = $(this).scrollTop();
       
-      if (slideIndex != sliderCurrent) {
+      if (slideIndex != sliderCurrent && scrollTop > scrollPos) {
         sliderCurrent = slideIndex;
         var prependList = function () {
           if ($('.card').hasClass('activeNow')) {
@@ -108,8 +112,21 @@ function cardNews() {
         }
         $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
         setTimeout(function () { prependList(); }, 200);
+      } else if (slideIndex != sliderCurrent && scrollTop < scrollPos) {
+        sliderCurrent = slideIndex;
+        var appendToList = function () {
+          if ($('.card').hasClass('activeNow')) {
+            var $slicedCard = $('.card').slice(0, 1).addClass('transformPrev');
+            $('.card-list').append($slicedCard);
+          }
+        }
+
+        $('.card').removeClass('transformPrev').last().addClass('activeNow').prevAll().removeClass('activeNow');
+        setTimeout(function () { appendToList(); }, 200);
       }
       
+      scrollPos = scrollTop;
+
     }      
   });
 
@@ -139,8 +156,10 @@ function cardNews() {
   // });
 }
 
-if (window.matchMedia("(min-width: 960px)").matches) {
-  cardNews();
-} else {
-  sliderNews();
+if ($('.articles-day').length) {
+  if (window.matchMedia("(min-width: 1280px)").matches) {
+    cardNews();
+  } else {
+    sliderNews();
+  }
 }
