@@ -1,5 +1,4 @@
 .main-menu
-
   &__nav
     ul
       list-style: none
@@ -16,7 +15,8 @@
 
         &.is-active
           a
-            color #8b00fd
+            color: #8b00fd
+
         a
           font-size: 15px
           color: #1E0B2E
@@ -45,8 +45,12 @@
               right: initial
               left: 0
               width: 100%
+
           &.color-mode
             color: #2E9500
+
+            &:after
+              background-color: #2E9500
 
             &:hover
               &:after
