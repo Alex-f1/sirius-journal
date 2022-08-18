@@ -2,13 +2,23 @@
   padding-top: 125px
   height: 800px
 
-  @media (max-width: 1279px)
+  @media (max-width: 1023px)
     padding-top: 0
     margin-bottom: 55px
     height: auto
 
+  @media (max-height: 734px)
+    padding-top: 125px
+
+  @media (max-height: 659px)
+    padding-top: 0
+
   &__container
-    @media (max-width: 1279px)
+    @media (max-width: 1023px)
+      border-radius: 20px
+      height: 575px
+
+    @media (max-height: 659px)
       border-radius: 20px
       height: 575px
 
@@ -67,14 +77,20 @@
           animation-fill-mode: forwards
 
   &__items
-    @media (max-width: 1279px)
+    @media (max-width: 1023px)
+      height: 575px !important
+
+    @media (max-height: 659px)
       height: 575px !important
 
   &__item
     border-radius: 20px
     overflow: hidden
 
-    @media (max-width: 1279px)
+    @media (max-width: 1023px)
+      border-radius: 0
+
+    @media (max-height: 659px)
       border-radius: 0
 
   &__body
@@ -86,7 +102,10 @@
     overflow: hidden
     display: block
 
-    @media (max-width: 1279px)
+    @media (max-width: 1023px)
+      border-radius: 0
+
+    @media (max-height: 659px)
       border-radius: 0
 
     &:after
@@ -218,6 +237,13 @@
   position: absolute
   margin: 20px auto
 
+  @media (max-width: 1279px)
+    width: 315px
+    height: 475px
+
+  @media (max-height: 734px)
+    height: 475px
+
   .buttons
     position: absolute
     width: 48px
@@ -247,6 +273,9 @@
   .card-list
     width: 380px
 
+    @media (max-width: 1279px)
+      width: 315px
+
     &__image
       height: 200px
 
@@ -273,9 +302,16 @@
         padding-right: 0
         padding-left: 0
 
+        @media (max-width: 1279px)
+          display: none
+          width: 240px
+
       &.activeNow
         .news-slider__content
           z-index: 5
+
+          @media (max-width: 1279px)
+            display: block
 
       &.transformPrev
         z-index: 5
@@ -292,7 +328,7 @@
           opacity: 0.8
           filter: blur(32px)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
             display: none
 
         &:after
@@ -306,7 +342,7 @@
           opacity: 0.4
           filter: blur(32px)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
             display: none
 
         .fill-card
@@ -318,7 +354,10 @@
           background: linear-gradient(0deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), linear-gradient(0deg, rgba(139, 0, 253, 0.2), rgba(139, 0, 253, 0.2)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8))
           box-shadow: inset 0px 4px 250px rgba(139, 0, 253, 0.1)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
+            display: none
+
+          @media (max-height: 659px)
             display: none
 
       &:nth-child(3)
@@ -333,7 +372,10 @@
           opacity: 0.8
           filter: blur(32px)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
+            display: none
+
+          @media (max-height: 659px)
             display: none
 
         &:after
@@ -347,7 +389,10 @@
           opacity: 0.4
           filter: blur(32px)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
+            display: none
+
+          @media (max-height: 659px)
             display: none
 
         .fill-card
@@ -360,7 +405,10 @@
           opacity: 1
           filter: blur(32px)
 
-          @media (max-width: 1279px)
+          @media (max-width: 1023px)
+            display: none
+
+          @media (max-height: 659px)
             display: none
 
       &:nth-child(1)
@@ -391,6 +439,9 @@
 
         .news-slider__content
           z-index: 5
+
+          @media (max-width: 1279px)
+            display: block
 
 .transformThis
   animation: scaleDown 500ms

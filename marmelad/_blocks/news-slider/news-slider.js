@@ -10,18 +10,19 @@ function sliderNews() {
   $('.news-slider__item').addClass('swiper-slide');
 
   const breakpoint = window.matchMedia('(max-width:1279px)');
+  const breakpointHeight = window.matchMedia('(max-height:660px)');
 
   let newsSlider;
 
   const breakpointChecker = function () {
 
-    if (breakpoint.matches === false) {
+    if (breakpoint.matches === false && breakpointHeight === false) {
 
       if (newsSlider !== undefined) newsSlider.destroy(true, true);
 
       return;
 
-    } else if (breakpoint.matches === true) {
+    } else if (breakpoint.matches === true && breakpointHeight === true) {
 
       return enableSwiper();
 
@@ -59,6 +60,7 @@ function sliderNews() {
   };
 
   breakpoint.addEventListener("load", breakpointChecker);
+  breakpointHeight.addEventListener("load", breakpointChecker);
 
   breakpointChecker();
 
@@ -193,11 +195,36 @@ function cardNews() {
 
 if ($('.articles-day').length) {
   $(window).on('load resize', function() {
-    if (window.matchMedia("(min-width: 1280px)").matches) {
+    if (window.matchMedia("(min-width: 1024px)").matches && window.matchMedia("(min-height: 660px)").matches) {
       cardNews();
     } else {
       $('.articles-day__col--slider').css('height', 'auto')
       sliderNews();
+
+      var newsSlider = new Swiper(".js-news-slider", {
+        loop: false,
+        speed: 800,
+        autoplay: {
+          delay: 5000,
+        },
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: ["-20%", 0, -1],
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          renderBullet: function (index, className) {
+            return '<span class="' + className + '">' + '<span></span>' + '</span>';
+          },
+        },
+      });
     }
   }) 
 }
