@@ -38,9 +38,16 @@
         @media (max-width: 374px)
           margin-right: 20px
 
+        &:hover
+          .social-links__icon
+            svg
+              path
+                fill: #9900FF !important
+
       &__icon
-        img
-          opacity: 1
+        svg
+          path
+            fill: #fff
 
   &__bottom
     color: #D3CED6
@@ -110,11 +117,17 @@
           &__title
             color: #fff
 
-          &__icon-light
-            opacity: 1 !important
+          &__item
+            &:hover
+              .social-links__icon
+                svg
+                  path
+                    fill: #1E0B2E
 
-          &__icon-dark
-            opacity: 0 !important
+          &__icon
+            svg
+              path
+                fill: #fff
 
     &--info
       flex: 0 0 180px

@@ -48,14 +48,18 @@
   &__button-search
     display: flex
     align-items: center
-
-    .svg-icon
-      stroke: #1E0B2E
-      fill: transparent
+    flex: 0 0 26px
+    width: 26px
+    max-width: 26px
+    height: 26px
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.7782 19.7782C24.0739 15.4824 24.0739 8.51759 19.7782 4.22183C15.4824 -0.0739419 8.51759 -0.0739419 4.22183 4.22183C-0.0739419 8.51759 -0.0739419 15.4824 4.22183 19.7782C8.51759 24.0739 15.4824 24.0739 19.7782 19.7782ZM19.7782 19.7782L27 27' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+    background-repeat: no-repeat
+    background-position: 0 0
+    background-size: contain
+    transition: background 0.3s, ease 0.3s
 
     &:hover
-      .svg-icon
-        stroke: #9900FF !important
+      background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.7782 19.7782C24.0739 15.4824 24.0739 8.51759 19.7782 4.22183C15.4824 -0.0739419 8.51759 -0.0739419 4.22183 4.22183C-0.0739419 8.51759 -0.0739419 15.4824 4.22183 19.7782C8.51759 24.0739 15.4824 24.0739 19.7782 19.7782ZM19.7782 19.7782L27 27' stroke='%239900FF' stroke-width='2'/%3E%3C/svg%3E%0A")
 
   &__button-burger
     flex: 0 0 32px

@@ -44,6 +44,13 @@
     &:last-child
       margin-right: 0
 
+    &:hover
+      & ^[0]
+        &__icon
+          svg
+            path
+              fill: #9900FF
+
   &__icon
     display: block
     position: absolute
@@ -59,6 +66,10 @@
       top: 0
       left: 0
       opacity: 0
+
+    svg
+      path
+        transition: fill 0.3s, ease 0.3s
 
   &__icon-dark
     opacity: 1 !important

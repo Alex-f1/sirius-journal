@@ -7,6 +7,7 @@
     background-color: #F5F0F6
     border-radius: 27px
     width: 100%
+    padding-right: 3px
     transition: width 0.3s, ease 0.3s
 
     @media (max-width: 1023px)
@@ -37,10 +38,13 @@
       letter-spacing: 0.01em
 
   &__button-submit
-    width: 150px
+    width: 160px
     min-width: auto
     display: flex
+    justify-content: center
     align-items: center
+    padding-top: 14px
+    padding-bottom: 14px
 
     @media (max-width: 1023px)
       width: 30px
@@ -48,17 +52,17 @@
 
     span
       padding-top: 2px
-      margin-right: 15px
+      margin-right: 10px
 
       @media (max-width: 1023px)
         display: none
 
     &:before
       content: ''
-      flex: 0 0 20px
-      width: 20px
-      max-width: 20px
-      height: 20px
+      flex: 0 0 18px
+      width: 18px
+      max-width: 18px
+      height: 18px
       background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0003 14.0003C16.9743 11.0263 16.9743 6.20449 14.0003 3.23049C11.0263 0.256502 6.20449 0.256502 3.23049 3.23049C0.256502 6.20449 0.256502 11.0263 3.23049 14.0003C6.20449 16.9743 11.0263 16.9743 14.0003 14.0003ZM14.0003 14.0003L19 19' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
       background-repeat: no-repeat
       background-size: contain
