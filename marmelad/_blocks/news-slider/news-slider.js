@@ -85,9 +85,15 @@ function cardNews() {
     if (articlesDayTop <= window.pageYOffset && scrollYRelease > window.pageYOffset) {
       let progress = (window.pageYOffset - articlesDayTop) / (scrollDiff / 100);
       let progressPath = (lrDif + lrDifSpeed) / 100 * progress;
+
+      $('.articles-day__head').css('z-index', 45)
+      
       
       if (progressPath > lrDif) {
         progressPath = lrDif;
+
+        $('.articles-day__head').css('z-index', 60)
+
       }
 
       if (progressPath <= 0) {
@@ -157,9 +163,11 @@ function cardNews() {
 }
 
 if ($('.articles-day').length) {
-  if (window.matchMedia("(min-width: 1280px)").matches) {
-    cardNews();
-  } else {
-    sliderNews();
-  }
+  $(window).on('load resize', function() {
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+      cardNews();
+    } else {
+      sliderNews();
+    }
+  }) 
 }
