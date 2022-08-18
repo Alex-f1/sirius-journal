@@ -1,4 +1,4 @@
-var newsSlider = undefined;
+// var newsSlider = undefined;
 
 function sliderNews() {
   $('.news-slider__container').removeClass('card-stack');
@@ -9,30 +9,59 @@ function sliderNews() {
   $('.news-slider__items').addClass('swiper-wrapper');
   $('.news-slider__item').addClass('swiper-slide');
 
-  newsSlider = new Swiper(".js-news-slider", {
-    loop: false,
-    speed: 800,
-    autoplay: {
-      delay: 5000,
-    },
-    effect: "creative",
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        translate: ["-20%", 0, -1],
+  const breakpoint = window.matchMedia('(max-width:1279px)');
+
+  let newsSlider;
+
+  const breakpointChecker = function () {
+
+    if (breakpoint.matches === false) {
+
+      if (newsSlider !== undefined) newsSlider.destroy(true, true);
+
+      return;
+
+    } else if (breakpoint.matches === true) {
+
+      return enableSwiper();
+
+    }
+
+  };
+
+  const enableSwiper = function () {
+
+    newsSlider = new Swiper(".js-news-slider", {
+      loop: false,
+      speed: 800,
+      autoplay: {
+        delay: 5000,
       },
-      next: {
-        translate: ["100%", 0, 0],
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: ["-20%", 0, -1],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
       },
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + '<span></span>' + '</span>';
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + '<span></span>' + '</span>';
+        },
       },
-    },
-  });
+    });
+
+  };
+
+  breakpoint.addEventListener("load", breakpointChecker);
+
+  breakpointChecker();
+
 }
 
 function cardNews() {
@@ -167,6 +196,7 @@ if ($('.articles-day').length) {
     if (window.matchMedia("(min-width: 1280px)").matches) {
       cardNews();
     } else {
+      $('.articles-day__col--slider').css('height', 'auto')
       sliderNews();
     }
   }) 
