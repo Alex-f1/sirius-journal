@@ -114,6 +114,7 @@
 
     &--slider
       min-height: 660px
+      position relative
 
       @media (max-width: 1279px)
         flex: 0 0 320px
@@ -169,6 +170,12 @@
 
       & ^[0]
         &__items
+          @media (max-width: 1023px)
+            transform: translateY(0) !important
+
+          @media (max-height: 659px)
+            transform: translateY(0) !important
+
           @media (max-width: 767px)
             display: flex
             flex-wrap: wrap

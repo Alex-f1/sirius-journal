@@ -7,13 +7,29 @@
     margin-bottom: 55px
     height: auto
 
-  @media (max-height: 734px)
-    padding-top: 230px
+  // @media (max-height: 734px)
+  //   padding-top: 230px
 
   @media (max-height: 659px)
     padding-top: 0
+    
+
+  &--desktop  
+    display: block
+    @media (max-width: 1023px)
+      display: none
+    @media (max-height: 659px)
+      display: none
+
+  &--mobile
+    display none
+    @media (max-width: 1023px)
+      display block
+    @media (max-height: 659px)
+      display block
 
   &__container
+    border-radius: 20px
     @media (max-width: 1023px)
       border-radius: 20px
       height: 575px
@@ -243,6 +259,7 @@
 
   @media (max-height: 734px)
     height: 475px
+    margin-top: 120px
 
   .buttons
     position: absolute

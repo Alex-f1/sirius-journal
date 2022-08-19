@@ -1,15 +1,39 @@
 // var newsSlider = undefined;
 
 function sliderNews() {
-  $('.news-slider__container').removeClass('card-stack');
-  $('.news-slider__items').removeClass('card-list');
-  $('.news-slider__item').removeClass('card');
+  var newsSlider = new Swiper(".news-slider--mobile .js-news-slider", {
+    loop: false,
+    speed: 800,
+    autoplay: {
+      delay: 5000,
+    },
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ["-20%", 0, -1],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + '<span></span>' + '</span>';
+      },
+    },
+  });
+  // $('.news-slider__container').removeClass('card-stack');
+  // $('.news-slider__items').removeClass('card-list');
+  // $('.news-slider__item').removeClass('card');
 
-  $('.news-slider__container').addClass('swiper');
-  $('.news-slider__items').addClass('swiper-wrapper');
-  $('.news-slider__item').addClass('swiper-slide');
+  // $('.news-slider__container').addClass('swiper');
+  // $('.news-slider__items').addClass('swiper-wrapper');
+  // $('.news-slider__item').addClass('swiper-slide');
 
-  const breakpoint = window.matchMedia('(max-width:1279px)');
+  /* const breakpoint = window.matchMedia('(max-width:1279px)');
   const breakpointHeight = window.matchMedia('(max-height:660px)');
 
   let newsSlider;
@@ -62,18 +86,18 @@ function sliderNews() {
   breakpoint.addEventListener("load", breakpointChecker);
   breakpointHeight.addEventListener("load", breakpointChecker);
 
-  breakpointChecker();
+  breakpointChecker(); */
 
 }
 
 function cardNews() {
-  $('.news-slider__container').removeClass('swiper').removeAttr('style');
-  $('.news-slider__items').removeClass('swiper-wrapper').removeAttr('style');
-  $('.news-slider__item').removeClass('swiper-slide').removeAttr('style');
+  // $('.news-slider__container').removeClass('swiper').removeAttr('style');
+  // $('.news-slider__items').removeClass('swiper-wrapper').removeAttr('style');
+  // $('.news-slider__item').removeClass('swiper-slide').removeAttr('style');
 
-  $('.news-slider__container').addClass('card-stack');
-  $('.news-slider__items').addClass('card-list');
-  $('.news-slider__item').addClass('card');
+  // $('.news-slider__container').addClass('card-stack');
+  // $('.news-slider__items').addClass('card-list');
+  // $('.news-slider__item').addClass('card');
 
   const lastCard = $('.card-list .card').length - 1;
 
@@ -138,6 +162,8 @@ function cardNews() {
       var slideIndex = parseInt(progress / sliderStep);
 
       var scrollTop = $(this).scrollTop();
+
+      
       
       if (slideIndex != sliderCurrent && scrollTop > scrollPos) {
         sliderCurrent = slideIndex;
@@ -145,6 +171,8 @@ function cardNews() {
           if ($('.card').hasClass('activeNow')) {
             var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
             $('.card-list').prepend($slicedCard);
+          } else {
+            $('.card').last().addClass('activeNow');
           }
         }
         $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
@@ -198,33 +226,11 @@ if ($('.articles-day').length) {
     if (window.matchMedia("(min-width: 1024px)").matches && window.matchMedia("(min-height: 660px)").matches) {
       cardNews();
     } else {
+      $('.news-slider--desktop').css('display', 'none')
+      $('.news-slider--mobile').css({display: 'block', paddingTop: 0,})
       $('.articles-day__col--slider').css('height', 'auto')
-      sliderNews();
-
-      var newsSlider = new Swiper(".js-news-slider", {
-        loop: false,
-        speed: 800,
-        autoplay: {
-          delay: 5000,
-        },
-        effect: "creative",
-        creativeEffect: {
-          prev: {
-            shadow: true,
-            translate: ["-20%", 0, -1],
-          },
-          next: {
-            translate: ["100%", 0, 0],
-          },
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '">' + '<span></span>' + '</span>';
-          },
-        },
-      });
+      $('.articles-day__inner').css('height', 'auto')
     }
   }) 
+  sliderNews();
 }

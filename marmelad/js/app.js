@@ -61,8 +61,9 @@ $(function() {
     hoverFooterCol();
   }
 
-  if (window.matchMedia("(min-width: 1280px)").matches) {
-    footerCol();
-  }
-
+  $(window).on('load resize', function () {
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+      footerCol();
+    }
+  }) 
 });
