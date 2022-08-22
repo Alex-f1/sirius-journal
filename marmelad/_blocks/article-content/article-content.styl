@@ -58,7 +58,7 @@
 
     @media (max-width: 767px)
       border-radius: 16px
-      height 215px
+      height: 215px
 
     img
       width: 100%
@@ -76,6 +76,15 @@
   &__author
     display: flex
     align-items: center
+    text-decoration: none
+
+    &:hover
+      & ^[0]
+        &__author-pic
+          border-color: #9900FF
+
+        &__author-name
+          color: #9900FF
 
   &__author-pic
     flex: 0 0 48px
@@ -84,6 +93,8 @@
     height: 48px
     border-radius: 50%
     border: 3px solid #F2F2F2
+    margin-right: 3px
+    transition: border-color 0.3s, ease 0.3s
 
     img
       vertical-align: top
@@ -97,12 +108,14 @@
       font-weight: 400
       line-height: 1.1
       display: block
+      transition: color 0.3s, ease 0.3s
 
     span
       font-size: 14px
       font-weight: 500
       line-height: 1.1
       display: block
+      transition: color 0.3s, ease 0.3s
 
   &__reading-time
     font-size: 14px
@@ -241,6 +254,31 @@
           @media (max-width: 767px)
             right: 0
 
+    ul, ol
+      font-size: 20px
+      color: #9900FF
+      font-family: $fonts.textFont
+      font-weight: 400
+      line-height: 1.1
+      text-align: left
+      padding-left: 35px
+      margin: 0
+      max-width: 520px
+
+      li
+        text-align: left
+        margin-bottom: 30px
+        padding-left: 8px
+
+        span
+          font-size: 20px
+          color: #000
+          font-family: $fonts.textFont
+          font-weight: 400
+          line-height: 1.2
+          margin-top: 0
+          margin-bottom: 30px
+
   &__video
     width: 100%
     margin-bottom: 35px
@@ -291,7 +329,7 @@
       width: 100%
       height: 100%
       object-fit: cover
-      object-position: center center
+      object-position: 0 0
       vertical-align: top
       position: absolute
       top: 0
@@ -301,59 +339,34 @@
       width: 100%
       height: 100%
       object-fit: cover
-      object-position: center center
+      object-position: 0 0 
       vertical-align: top
       position: absolute
       top: 0
       left: 0
 
-  &__list
-    position: relative
-    text-align: center
+  // &__list
+  //   position: relative
+  //   text-align: center
 
-    @media (max-width: 959px)
-      margin-bottom: 30px
+  //   @media (max-width: 959px)
+  //     margin-bottom: 30px
 
-    ol
-      font-size: 20px
-      color: #9900FF
-      font-family: $fonts.textFont
-      font-weight: 400
-      line-height: 1.1
-      text-align: left
-      padding-left: 35px
-      margin: 0
-      max-width: 520px
+  //   img
+  //     vertical-align: top
+  //     position: absolute
+  //     top: 50%
+  //     right: -150px
+  //     transform: translateY(-50%)
 
-      li
-        text-align: left
-        margin-bottom: 30px
-        padding-left: 8px
+  //     @media (max-width: 1023px)
+  //       right: 0
 
-        span
-          font-size: 20px
-          color: #000
-          font-family: $fonts.textFont
-          font-weight: 400
-          line-height: 1.2
-          margin-top: 0
-          margin-bottom: 30px
-
-    img
-      vertical-align: top
-      position: absolute
-      top: 50%
-      right: -150px
-      transform: translateY(-50%)
-
-      @media (max-width: 1023px)
-        right: 0
-
-      @media (max-width: 959px)
-        position: static
-        top: 0
-        right: 0
-        transform: translateY(0)
+  //     @media (max-width: 959px)
+  //       position: static
+  //       top: 0
+  //       right: 0
+  //       transform: translateY(0)
 
   &__find-answer
     background-color: #FBF7FC
@@ -534,7 +547,7 @@
       margin-right: 8px
 
     @media (max-width: 374px)
-      font-size 16px  
+      font-size: 16px
 
   &__rating-button
     width: 80px
