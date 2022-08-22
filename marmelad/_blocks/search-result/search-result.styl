@@ -1,0 +1,112 @@
+.search-result
+  padding-top: 50px
+
+  @media (max-width: 1279px)
+    padding-top: 0
+
+  &__head
+    text-align: center
+    padding-bottom: 45px
+    border-bottom: 1px solid #ECE4F0
+    margin-bottom: 80px
+
+    @media (max-width: 1279px)
+      padding-bottom: 30px
+
+    .search-panel
+      padding-top: 35px
+      padding-bottom: 35px
+
+      @media (max-width: 1279px)
+        padding-top: 30px
+        padding-bottom: 25px
+
+    h1
+      font-size: 42px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1.2
+      text-align: center
+      text-transform: uppercase
+      margin-top: 0
+      margin-bottom: 10px
+
+      @media (max-width: 767px)
+        font-size: 28px
+
+  &__find-articles
+    font-size: 14px
+    color: #1E0B2E
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1.1
+    text-align: center
+    letter-spacing: 5px
+    text-transform: uppercase
+
+  &__items
+    max-width: 1150px
+    width: 100%
+    margin-left: auto
+    margin-right: auto
+
+  &__item
+    display: flex
+    margin-bottom: 60px
+
+  &__number
+    font-size: 20px
+    color: #A400FF
+    font-family: $fonts.textFont
+    font-weight: 400
+    line-height: 1.1
+    text-align: right
+    margin-top: 5px
+    margin-right: 15px
+    min-width: 25px
+
+    @media (max-width: 767px)
+      margin-right: 5px
+      margin-top: 3px
+
+  &__name
+    font-size: 24px
+    color: #000
+    font-weight: 500
+    line-height: 1.2
+    text-transform: uppercase
+    text-decoration: none
+    margin-bottom: 15px
+    transition: color 0.3s, ease 0.3s
+    display: block
+
+    @media (max-width: 767px)
+      font-size: 20px
+
+    &:hover
+      color: #A400FF
+
+  &__text
+    font-size: 20px
+    color: #000
+    font-family: $fonts.textFont
+    font-weight: 400
+    line-height: 1.2
+    margin-bottom: 15px
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    white-space: normal
+    height: 45px
+    overflow: hidden
+
+  &__link
+    font-size: 20px
+    color: #A400FF
+    font-family: $fonts.textFont
+    font-weight: 400
+    line-height: 1.1
+
+    &:hover
+      text-decoration: none
