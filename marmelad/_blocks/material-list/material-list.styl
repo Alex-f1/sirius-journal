@@ -58,6 +58,46 @@
     letter-spacing: 5px
     text-transform: uppercase
 
+  &__author-pic
+    width: 136px
+    height: 136px
+    margin-right: auto
+    margin-left: auto
+    margin-bottom: 10px
+    border: 3px solid #F2F2F2
+    border-radius: 50%
+    overflow: hidden
+
+    img
+      vertical-align: top
+
+  &__social-links
+    width: 100%
+    margin-top: 15px
+    display: flex
+    align-items: center
+    justify-content: center
+
+    a
+      text-decoration: none
+      flex: 0 0 48px
+      width: 48px
+      max-width: 48px
+      height: 48px
+      margin-right: 8px
+
+      &:last-child
+        margin-right: 0
+
+      svg
+        path
+          transition: fill 0.3s, ease 0.3s
+
+      &:hover
+        svg
+          path
+            fill: #9900FF
+
   &__items
     display: flex
     flex-wrap: wrap
