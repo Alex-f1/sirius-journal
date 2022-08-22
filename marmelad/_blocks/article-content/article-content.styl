@@ -1,6 +1,7 @@
 .article-content
+  border-bottom: 1px solid #ECE4F0
   padding-top: 30px
-  padding-bottom: 40px
+  margin-bottom: 40px
 
   &__inner
     max-width: 1010px + 8px + 8px
@@ -22,6 +23,9 @@
       text-transform: uppercase
       margin-top: 0
       margin-bottom: 10px
+
+      @media (max-width: 767px)
+        font-size: 28px
 
   &__date
     font-size: 14px
@@ -51,6 +55,10 @@
     overflow: hidden
     width: 100%
     height: 480px
+
+    @media (max-width: 767px)
+      border-radius: 16px
+      height 215px
 
     img
       width: 100%
@@ -108,6 +116,9 @@
     align-items: center
     margin-right: 75px
 
+    @media (max-width: 767px)
+      display: none
+
     &:before
       content: ''
       flex: 0 0 25px
@@ -146,12 +157,18 @@
     margin-right: auto
     margin-left: auto
 
+    @media (max-width: 1023px)
+      max-width: 100%
+
     h2
       font-size: 32px
       line-height: 1.1
       text-align: left
       letter-spacing: 0
       text-transform: none
+
+      @media (max-width: 767px)
+        font-size: 24px
 
     h3
       font-size: 28px
@@ -161,6 +178,9 @@
       line-height: 1.2
       margin-top: 0
       margin-bottom: 30px
+
+      @media (max-width: 767px)
+        font-size: 24px
 
     p
       font-size: 20px
@@ -185,10 +205,16 @@
         text-align: center
         max-width: 600px
         width: 100%
-        padding: 50px 20px
+        padding: 40px 20px
         margin-right: auto
         margin-left: auto
         position: relative
+
+        @media (max-width: 959px)
+          max-width: 500px
+
+        @media (max-width: 767px)
+          font-size: 24px
 
         &:before, &:after
           content: ''
@@ -205,17 +231,61 @@
           left: -10px
           background-image: url("data:image/svg+xml,%3Csvg width='8' height='102' viewBox='0 0 8 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 1C3.08235 17.0043 1 33.7605 1 51C1 68.2395 3.08235 84.9778 7 101' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
 
+          @media (max-width: 767px)
+            left: 0
+
         &:after
           right: -10px
           background-image: url("data:image/svg+xml,%3Csvg width='8' height='102' viewBox='0 0 8 102' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1C4.91765 17.0043 7 33.7605 7 51C7 68.2395 4.91765 84.9778 1 101' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
 
+          @media (max-width: 767px)
+            right: 0
+
   &__video
+    width: 100%
+    margin-bottom: 35px
+
+    &._is-play
+      & ^[0]
+        &__video-play
+          &:before
+            display: none
+
+    span
+      font-size: 13px
+      color: #857B8A
+      font-weight: 500
+      line-height: 1.1
+      letter-spacing: 0.5px
+      display: block
+      margin-top: 10px
+
+  &__video-play
     width: 100%
     height: 390px
     position: relative
     cursor: pointer
-    margin-bottom: 65px
-    z-index: 3
+
+    @media (max-width: 767px)
+      height: 190px
+
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 126px
+      height: 126px
+      background-image: url("data:image/svg+xml,%3Csvg width='126' height='126' viewBox='0 0 126 126' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='63' cy='63' r='63' fill='white'/%3E%3Cpath d='M94 59.0359C96.6667 60.5755 96.6667 64.4245 94 65.9641L51.25 90.6458C48.5833 92.1854 45.25 90.2609 45.25 87.1817L45.25 37.8183C45.25 34.7391 48.5833 32.8146 51.25 34.3542L94 59.0359Z' fill='%239900FF'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      z-index: 2
+
+      @media (max-width: 767px)
+        width: 80px
+        height: 80px
 
     img
       width: 100%
@@ -237,27 +307,26 @@
       top: 0
       left: 0
 
-    span
-      font-size: 13px
-      color: #857B8A
-      font-weight: 500
-      line-height: 1.1
-      letter-spacing: 0.5px
-      position: absolute
-      bottom: -25px
-      left: 0
-
   &__list
+    position: relative
+    text-align: center
+
+    @media (max-width: 959px)
+      margin-bottom: 30px
+
     ol
       font-size: 20px
       color: #9900FF
       font-family: $fonts.textFont
       font-weight: 400
       line-height: 1.1
+      text-align: left
       padding-left: 35px
       margin: 0
+      max-width: 520px
 
       li
+        text-align: left
         margin-bottom: 30px
         padding-left: 8px
 
@@ -269,3 +338,306 @@
           line-height: 1.2
           margin-top: 0
           margin-bottom: 30px
+
+    img
+      vertical-align: top
+      position: absolute
+      top: 50%
+      right: -150px
+      transform: translateY(-50%)
+
+      @media (max-width: 1023px)
+        right: 0
+
+      @media (max-width: 959px)
+        position: static
+        top: 0
+        right: 0
+        transform: translateY(0)
+
+  &__find-answer
+    background-color: #FBF7FC
+    border-top: 1px solid #ECE4F0
+    border-bottom: 1px solid #ECE4F0
+    margin-bottom: 30px
+
+    h3
+      color: #9900FF
+      margin-bottom: 0
+      padding: 25px 25px 20px 25px
+      display: flex
+      justify-content: space-between
+      cursor: pointer
+
+      &:after
+        content: ''
+        flex: 0 0 16px
+        width: 16px
+        max-width: 16px
+        height: 10px
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 8.5L8 2L1.5 8.5' stroke='%239900FF' stroke-width='2'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: 0 0
+        margin-top: 5px
+        transform: rotate(180deg)
+        transition: transform 0.3s, ease 0.3s
+
+      &._is-active
+        &:after
+          transform: rotate(0)
+
+  &__find-answer-inner
+    display: none
+    padding: 0 25px 25px 25px
+
+    .button-default
+      display: flex
+      align-items: center
+      justify-content: center
+      max-width: 220px
+
+      &:before
+        content: ''
+        flex: 0 0 16px
+        width: 16px
+        max-width: 16px
+        height: 10px
+        background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 8.5L8 2L1.5 8.5' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: 0 0
+        order: 1
+        margin-left: 10px
+        position: relative
+        z-index: 2
+        transition: background 0.3s, ease 0.3s
+
+      &:hover
+        &:after
+          transform: scale(2) translate(-25%, -25%)
+
+        &:before
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5 8.5L8 2L1.5 8.5' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E%0A")
+
+  &__other-article
+    padding-top: 25px
+    padding-bottom: 25px
+    padding-left: 10px
+    border-top: 1px solid #ECE4F0
+    border-bottom: 1px solid #ECE4F0
+    margin-bottom: 30px
+    display: flex
+    align-items: center
+
+    @media (max-width: 639px)
+      flex-direction: column
+
+  &__other-article-img
+    flex: 0 0 240px
+    width: 240px
+    max-width: 240px
+
+    @media (max-width: 639px)
+      flex: none
+      margin-right: auto
+      margin-left: auto
+      margin-bottom: 15px
+
+    img
+      width: 100%
+      height: 100%
+      vertical-align: top
+      object-fit: cover
+      object-position: center center
+
+  &__other-article-text
+    padding: 0 25px
+    text-align: center
+
+    p
+      font-size: 24px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1.2
+      text-align: center
+      text-transform: uppercase
+
+      @media (max-width: 767px)
+        font-size: 20px
+
+      @media (max-width: 639px)
+        margin-bottom: 10px
+
+    & ^[0]
+      &__tags
+        justify-content: center
+
+  &__tags
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    margin-bottom: 15px
+
+    a
+      font-size: 13px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1
+      text-align: center
+      text-decoration: none
+      letter-spacing: 0.5px
+      padding: 4px 8px
+      background-color: rgba(211, 206, 214, 0.16)
+      border-radius: 4px
+      margin-right: 15px
+      transition: color 0.3s, ease 0.3s
+
+      &:hover
+        color: #9900FF
+
+      &:last-child
+        margin-right: 0
+
+  &__bottom
+    max-width: 700px + 8px + 8px
+    width: 100%
+    padding-top: 15px
+    padding-right: 8px
+    padding-left: 8px
+    margin-right: auto
+    margin-left: auto
+
+    @media (max-width: 1023px)
+      max-width: 100%
+
+  &__rate-article
+    display: flex
+    align-items: center
+    padding-top: 30px
+    padding-bottom: 30px
+
+    @media (max-width: 413px)
+      justify-content: space-between
+      margin-right: -14px
+
+  &__rate-article-name
+    font-size: 24px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1.1
+    text-transform: uppercase
+    margin-right: 15px
+
+    @media (max-width: 767px)
+      font-size: 20px
+      margin-right: 8px
+
+    @media (max-width: 374px)
+      font-size 16px  
+
+  &__rating-button
+    width: 80px
+    height: 50px
+    background-color: #FBF7FC
+    border-radius: 24px
+    border: none
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    margin-right: 15px
+    transition: background-color 0.3s, ease 0.3s
+
+    @media (max-width: 767px)
+      margin-right: 8px
+
+    &:last-child
+      margin-right: 0
+
+    i
+      flex: 0 0 30px
+      width: 30px
+      max-width: 30px
+      height: 35px
+
+      @media (max-width: 767px)
+        flex: 0 0 20px
+        width: 20px
+        max-width: 20px
+        height: 25px
+
+      img
+        vertical-align: top
+
+    span
+      font-size: 13px
+      color: #000
+      font-weight: 500
+      line-height: 1
+      letter-spacing: 0.5px
+      margin-left: 5px
+      transition: color 0.3s, ease 0.3s
+
+    &:hover
+      background-color: #9900FF
+
+      span
+        color: #fff
+
+  &__shares
+    padding: 30px 0
+    border-top: 1px solid #ECE4F0
+    display: flex
+    align-items: center
+
+    @media (max-width: 639px)
+      flex-direction: column
+      align-items: flex-start
+
+  &__shares-name
+    font-size: 24px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1.1
+    text-transform: uppercase
+    margin-right: 15px
+
+    @media (max-width: 767px)
+      font-size: 20px
+
+    @media (max-width: 639px)
+      margin-right: 0
+      margin-bottom: 15px
+
+    @media (max-width: 374px)
+      font-size: 16px
+
+  &__shares-links
+    display: flex
+    align-items: center
+
+    @media (max-width: 639px)
+      width: 100%
+      justify-content: space-between
+
+    a
+      text-decoration: none
+      flex: 0 0 48px
+      width: 48px
+      max-width: 48px
+      height: 48px
+      margin-right: 15px
+
+      &:last-child
+        margin-right: 0
+
+      svg
+        path
+          transition: fill 0.3s, ease 0.3s
+
+      &:hover
+        svg
+          path
+            fill: #9900FF

@@ -14,6 +14,10 @@ layout: !!map
 
 {% block main %}
 
-	{#% include "article-content.html" %#}
+	{% include "article-content.html" %}
+
+	{% include "recommended-article.html" %}
+
+	{% include "next-article.html" %}
 
 {% endblock %}
