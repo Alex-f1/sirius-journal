@@ -1,0 +1,115 @@
+.page-pagination
+  display: flex
+  justify-content: center
+
+  &__items
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+
+    a
+      font-size: 16px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1
+      text-align: center
+      letter-spacing: 1px
+      text-transform: uppercase
+      text-decoration: none
+      display: flex
+      align-items: center
+      justify-content: center
+      flex: 0 0 48px
+      width: 48px
+      max-width: 48px
+      height: 48px
+      border: 1px solid #1E0B2E
+      border-radius: 40px
+      margin-right: 15px
+      margin-bottom: 30px
+      position: relative
+      overflow: hidden
+      cursor: pointer
+      transition: border-color 0.3s, ease 0.3s
+
+      &:last-child
+        margin-right: 0
+
+      span
+        position: relative
+        z-index: 2
+
+      &:after
+        content: ''
+        width: 5px
+        height: 5px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        transition: width 0.3s, height 0.3s, background-color 0.3s, ease-in 0.3s
+        border-radius: 50%
+
+      &:hover
+        border-color: transparent
+        color: #fff
+
+        &:after
+          width: 50px
+          height: 50px
+          background-color: #8B00FD
+
+  &__separator
+    font-size: 16px
+    color: #1E0B2E
+    font-weight: 500
+    line-height: 1
+    text-align: center
+    letter-spacing: 1px
+    text-transform: uppercase
+    margin-right: 15px
+
+  &__prev, &__next
+    flex: 0 0 155px !important
+    width: 155px !important
+    max-width: 155px !important
+
+    span
+      margin-top: 2 px
+
+    &:before
+      position: relative
+      z-index: 2
+      transition: background 0.3s, ease 0.3s
+
+    &:hover
+      &:after
+        width: 200px !important
+        height: 200px !important
+
+  &__prev
+    &:before
+      content: ''
+      width: 9px
+      height: 15px
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 13.75L7.25 7.25L0.75 0.75' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+      transform: rotate(180deg)
+      margin-right: 15px
+
+    &:hover
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 13.75L7.25 7.25L0.75 0.75' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E%0A")
+
+  &__next
+    &:before
+      content: ''
+      width: 9px
+      height: 15px
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 13.75L7.25 7.25L0.75 0.75' stroke='%231E0B2E' stroke-width='2'/%3E%3C/svg%3E%0A")
+      margin-left: 15px
+      order: 1
+
+    &:hover
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg width='9' height='15' viewBox='0 0 9 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.75 13.75L7.25 7.25L0.75 0.75' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E%0A")

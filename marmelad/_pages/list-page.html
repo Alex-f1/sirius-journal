@@ -1,0 +1,21 @@
+= yaml =
+pageTitle: Наука
+bodyClasses:
+layout: !!map
+    header: true
+    footer: true
+    left: false
+    right: false
+= yaml =
+
+{% extends 'app.html' %}
+
+
+
+{% block main %}
+
+	{% include "material-list.html" %}
+
+  {% include "projects-news.html" %}
+
+{% endblock %}
