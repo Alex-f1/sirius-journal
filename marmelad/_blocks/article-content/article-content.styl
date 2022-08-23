@@ -339,34 +339,30 @@
       width: 100%
       height: 100%
       object-fit: cover
-      object-position: 0 0 
+      object-position: 0 0
       vertical-align: top
       position: absolute
       top: 0
       left: 0
 
   &__img-content
-    position: relative
+    float: right
+    margin-left: 45px
+    margin-right: -140px
     text-align: center
 
-    @media (max-width: 959px)
+    @media (max-width: 1023px)
+      margin-right 0
+
+    @media (max-width: 767px)
+      text-align: center
+      width: 100%
+      float: none
+      margin-left: 0
       margin-bottom: 30px
 
     img
       vertical-align: top
-      position: absolute
-      top: 50%
-      right: -150px
-      transform: translateY(-50%)
-
-      @media (max-width: 1023px)
-        right: 0
-
-      @media (max-width: 959px)
-        position: static
-        top: 0
-        right: 0
-        transform: translateY(0)
 
   &__find-answer
     background-color: #FBF7FC
