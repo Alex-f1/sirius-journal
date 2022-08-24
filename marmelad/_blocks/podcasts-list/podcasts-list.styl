@@ -14,6 +14,42 @@
     .podcast-thumb
       max-width: 100%
 
+  &--detailed
+    & ^[0]
+      &__head
+        border-bottom: none
+        display: flex
+        padding-bottom: 0
+        margin-bottom: 0
+
+        @media (max-width: 639px)
+          display: block
+
+    .article-content
+      border-bottom: none
+      padding: 0
+      margin-bottom: 0
+
+      &__content
+        padding: 0
+
+      &__inner
+        padding-right: 0
+        padding-left: 0
+
+      &__bottom
+        padding-right: 0
+        padding-left: 0
+
+      &__shares
+        @media (max-width: 959px)
+          flex-direction: column
+          align-items: flex-start
+
+      &__shares-name
+        @media (max-width: 959px)
+          margin-bottom: 15px
+
   &__head
     border-bottom: 1px solid #ECE4F0
     padding-bottom: 40px
@@ -21,6 +57,145 @@
 
     @media (max-width: 959px)
       padding-bottom: 25px
+
+  &__left
+    flex: 0 0 280px
+    width: 280px
+    max-width: 280px
+    margin-right: 85px
+    margin-bottom: 35px
+
+    @media (max-width: 1023px)
+      margin-right: 35px
+
+    @media (max-width: 639px)
+      margin-right: auto
+      margin-left: auto
+      width: 100%
+      margin-bottom: 0
+
+  &__inner-top
+    max-width: 700px
+    width: 100%
+    display: flex
+    border-bottom: 1px solid #EAEAEA
+    padding-bottom: 30px
+    margin-bottom: 30px
+
+    @media (max-width: 639px)
+      flex-direction: column
+      align-items: center
+      padding-bottom: 15px
+      margin-bottom: 15px
+
+  &__head-podcast
+    @media (max-width: 639px)
+      text-align: center
+
+    h1
+      font-size: 42px
+      color: #000
+      font-weight: 500
+      line-height: 1.2
+      text-transform: uppercase
+      margin-top: 0
+      margin-bottom: 15px
+
+      @media (max-width: 959px)
+        font-size: 20px
+
+  &__podcast-icon
+    flex: 0 0 80px
+    width: 80px
+    max-width: 80px
+    height: 80px
+    padding-top: 25px
+    margin-right: 20px
+
+    @media (max-width: 639px)
+      flex: none
+      padding-top: 0
+      margin-right: 0
+      margin-bottom: 15px
+
+    img
+      vertical-align: top
+
+  &__date
+    font-size: 14px
+    color: #D3CED6
+    font-family: $fonts.additionalFont
+    font-weight: 400
+    line-height: 1
+    text-align: center
+    letter-spacing: 5px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+
+    @media (max-width: 639px)
+      justify-content: center
+
+    @media (max-width: 374px)
+      flex-wrap: wrap
+
+    i
+      flex: 0 0 4px
+      width: 4px
+      height: 4px
+      margin-right: 15px
+      margin-left: 15px
+      background-color: #D3CED6
+      border-radius: 50%
+
+    .time-icon
+      display: flex
+      align-items: center
+
+      &:before
+        content: ''
+        flex: 0 0 19px
+        width: 19px
+        max-width: 19px
+        height: 19px
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-image: url("data:image/svg+xml,%3Csvg width='19' height='18' viewBox='0 0 19 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='9.5' cy='9' r='8' stroke='%23D3CED6' stroke-width='2'/%3E%3Cpath d='M9.5 9H8.5V9.41421L8.79289 9.70711L9.5 9ZM10.5 5.5V4.5H8.5V5.5H10.5ZM11.2929 12.2071L12 12.9142L13.4142 11.5L12.7071 10.7929L11.2929 12.2071ZM10.5 9V5.5H8.5V9H10.5ZM8.79289 9.70711L11.2929 12.2071L12.7071 10.7929L10.2071 8.29289L8.79289 9.70711Z' fill='%23D3CED6'/%3E%3C/svg%3E%0A")
+        margin-right: 10px
+
+  &__count-edition
+    font-size: 20px
+    color: #000000
+    font-family: $fonts.textFont
+    font-style: italic
+    font-weight: 400
+    line-height: 1.1
+    text-align: center
+    margin-bottom: 15px
+    padding-right: 10px
+    padding-left: 10px
+    align-self: center
+    position: relative
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 4px
+      height: 26px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 0 0
+      transition: opacity 0.5s, left 0.5s, right 0.5s, ease 0.5s
+
+    &:before
+      left: -5px
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.38053 25L3 24.8326C2.09735 20.9814 1.63717 16.9814 1.63717 12.9814C1.63717 8.9814 2.09735 5 3 1.13023L2.38053 1C1.46018 4.90698 1 8.94419 1 13C1 17.0558 1.46018 21.093 2.38053 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: -5px
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.61947 25L1 24.8326C1.90265 20.9814 2.36283 16.9814 2.36283 12.9814C2.36283 8.9814 1.90265 5 1 1.13023L1.61947 1C2.53982 4.90698 3 8.94419 3 13C3 17.0558 2.53982 21.093 1.61947 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
 
   &__content
     text-align: center
@@ -140,3 +315,101 @@
 
     @media (max-width: 767px)
       margin-bottom: 35px
+
+.podcast-simple
+  position: sticky
+  top: 25px
+
+  &__body
+    display: flex
+    flex-direction: column
+
+  &__img
+    width: 280px
+    height: 280px
+    text-decoration: none
+    border-radius: 16px
+    overflow: hidden
+    margin-bottom: 20px
+    display: block
+
+    img
+      vertical-align: top
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center center
+
+  &__name
+    font-size: 24px
+    color: #000000
+    font-weight: 500
+    line-height: 1.1
+    text-align: center
+    text-transform: uppercase
+    text-decoration: none
+    margin-bottom: 15px
+    transition: color 0.3s, ease 0.3s
+
+    &:hover
+      color: #9900FF
+
+  &__count-edition
+    font-size: 20px
+    color: #000000
+    font-family: $fonts.textFont
+    font-style: italic
+    font-weight: 400
+    line-height: 1.1
+    text-align: center
+    margin-bottom: 15px
+    padding-right: 10px
+    padding-left: 10px
+    align-self: center
+    position: relative
+
+    @media (max-width: 639px)
+      display: none
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 4px
+      height: 26px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 0 0
+      transition: opacity 0.5s, left 0.5s, right 0.5s, ease 0.5s
+
+    &:before
+      left: -5px
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.38053 25L3 24.8326C2.09735 20.9814 1.63717 16.9814 1.63717 12.9814C1.63717 8.9814 2.09735 5 3 1.13023L2.38053 1C1.46018 4.90698 1 8.94419 1 13C1 17.0558 1.46018 21.093 2.38053 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: -5px
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='26' viewBox='0 0 4 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.61947 25L1 24.8326C1.90265 20.9814 2.36283 16.9814 2.36283 12.9814C2.36283 8.9814 1.90265 5 1 1.13023L1.61947 1C2.53982 4.90698 3 8.94419 3 13C3 17.0558 2.53982 21.093 1.61947 25Z' fill='%23A400FF' stroke='%23A400FF'/%3E%3C/svg%3E%0A")
+
+  &__text
+    font-size: 20px
+    color: #000000
+    font-family: $fonts.textFont
+    line-height: 1.2
+    font-weight: 400
+    text-align: center
+    margin-bottom: 15px
+
+    @media (max-width: 639px)
+      display: none
+
+  &__button-more
+    font-size: 15px
+    padding: 7px 15px
+    min-width: 125px
+    width: 125px
+    text-transform: none
+    margin-right: auto
+    margin-left: auto
+
+    @media (max-width: 639px)
+      display: none
