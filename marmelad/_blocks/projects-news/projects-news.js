@@ -95,5 +95,7 @@ function projectsNewsSlider() {
 
 
 if ($('.js-projects-news-slider').length) {
-  projectsNewsSlider();
+  $(window).on('load resize', function() {
+    projectsNewsSlider();
+  });
 }

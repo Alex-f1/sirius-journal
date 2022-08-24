@@ -1,0 +1,21 @@
+= yaml =
+pageTitle: Подкасты
+bodyClasses:
+layout: !!map
+    header: true
+    footer: true
+    left: false
+    right: false
+= yaml =
+
+{% extends 'app.html' %}
+
+
+
+{% block main %}
+
+	{% include "podcasts-list.html" %}
+    
+	{% include "other-podcasts.html" %}
+
+{% endblock %}

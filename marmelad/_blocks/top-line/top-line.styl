@@ -118,6 +118,7 @@
       display: flex
       align-items: center
       margin-right: 50px
+      transition: color 0.3s, ease 0.3s
 
       @media (max-width: 1023px)
         margin-right: 20px
@@ -125,12 +126,16 @@
       span
         margin-right: 5px
 
-      .svg-icon
-        stroke: #1E0B2E
-        fill: #1E0B2E
+      svg
+        path
+          transition: fill 0.3s, ease 0.3s
 
-      &:last-child
-        margin-right: 0
+      &:hover
+        color: #9900FF
+
+        svg
+          path
+            fill: #9900FF
 
   &__nav-bar
     border-bottom: 1px solid #ECE4F0

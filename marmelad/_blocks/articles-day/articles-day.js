@@ -4,6 +4,7 @@ function titleArticlesAnimate() {
   const getOffsetOtherBlock = $('.other-articles').length ? $('.other-articles').offset().top - 1000 : null;
   const getOffsetRecommendedBlock = $('.recommended-article').length ? $('.recommended-article').offset().top - 300 : null;
   const getOffsetNextArticledBlock = $('.next-article').length ? $('.next-article').offset().top - 300 : null;
+  const getOffsetOtherPodcastsBlock = $('.other-podcasts').length ? $('.other-podcasts').offset().top - 300 : null;
 
   $(window).on('scroll', function () {
     if ($(this).scrollTop() >= getOffsetArticlesDayBlock) {
@@ -26,6 +27,11 @@ function titleArticlesAnimate() {
       $('.next-article').addClass('_is-visible');
     } else {
       $('.next-article').removeClass('_is-visible');
+    }
+    if ($(this).scrollTop() >= getOffsetOtherPodcastsBlock) {
+      $('.other-podcasts').addClass('_is-visible');
+    } else {
+      $('.other-podcasts').removeClass('_is-visible');
     }
   });
 
