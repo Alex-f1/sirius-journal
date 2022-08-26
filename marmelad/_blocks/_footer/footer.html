@@ -1,6 +1,8 @@
 <footer block="footer">
   <div elem="section">
     <div elem="inner">
+      {% if pageTitle != "О проекте" %}
+        
       <div elem="top">
         <div elem="cols">
           <div elem="backdrop-fill" class="js-backdrop-fill-footer"></div>
@@ -25,6 +27,7 @@
           </div>
         </div>
       </div>
+      {% endif %}
       <div elem="middle">
         <a elem="logo" href="/">
           <img src="img/logo-light.svg" alt="">

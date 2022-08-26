@@ -1,0 +1,98 @@
+.about-project
+  padding-top: 100px
+
+  @media (max-width: 1279px)
+    padding-top: 30px
+    border-top: 1px solid #ECE4F0
+
+  &._is-visible
+    & ^[0]
+      &__title
+        letter-spacing: 50px
+
+        &:before, &:after
+          opacity: 0
+
+  &__head
+    text-align: center
+    background-color: #fff
+    width: 100%
+    padding-top: 20px
+    padding-bottom: 10px
+    margin-bottom: 50px
+
+    @media (min-width: 1280px)
+      position: sticky
+      top: 0
+      z-index: 50
+
+    @media (max-width: 1023px)
+      margin-bottom: 25px
+
+  &__title
+    line-height: 1.5
+    position: relative
+    display: inline-block
+    vertical-align: top
+    padding-right: 10px
+    padding-left: 10px
+    margin-bottom: 0
+    transition: letter-spacing 1s, ease-in 1s
+
+    @media (max-width: 1023px)
+      letter-spacing: 5px
+      padding-left: 10px
+
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 50%
+      width: 8px
+      height: 50px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 0 0
+      background-size: contain
+      transition: opacity 1.5s, left 1.5s, right 1.5s, ease 1.5s
+
+      @media (max-width: 1023px)
+        display: none
+
+    &:before
+      left: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.70297 1C2.97927 14.9237 1 29.5016 1 44.5C1 59.4984 2.97927 74.0607 6.70297 88' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+    &:after
+      right: 0
+      background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.15228 1C4.9705 14.9237 7 29.5016 7 44.5C7 59.4984 4.9705 74.0607 1.15228 88' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
+
+  &__info
+    display: flex
+    max-width: 1010px
+    width: 100%
+    margin-right: auto
+    margin-left: auto
+
+    @media (max-width: 767px)
+      display: block
+
+    strong
+      font-size: 32px
+      color: #1E0B2E
+      font-weight: 500
+      line-height: 1.1
+      width: 50%
+
+      @media (max-width: 767px)
+        font-size: 24px
+        width: 100%
+        margin-bottom: 30px
+        display: block
+
+    p
+      width: 50%
+      margin-left: 50px
+
+      @media (max-width: 767px)
+        width: 100%
+        margin-left: 0

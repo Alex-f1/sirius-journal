@@ -1,0 +1,33 @@
+= yaml =
+pageTitle: О проекте
+bodyClasses:
+layout: !!map
+    header: true
+    footer: true
+    left: false
+    right: false
+= yaml =
+
+{% extends 'app.html' %}
+
+
+
+{% block main %}
+
+  <div block="first-screen" mods="inner-page">
+    <div elem="section">
+      <div elem="inner">
+
+        {% include "hero-inner.html" %}
+
+        {% include "about-project.html" %}
+
+      </div>
+    </div>
+  </div><!-- first-screen -->
+
+  {% include "editorial.html" %}
+
+  {% include "our-contacts.html" %}
+
+{% endblock %}
