@@ -14,3 +14,18 @@ $('.article-content__find-answer h3').on('click', function () {
         .closest('.article-content__find-answer')
         .find('.article-content__find-answer-inner').stop().slideToggle();
 }) 
+
+if ($('.js-gallery-slider').length) {
+  var swiper = new Swiper(".js-gallery-slider", {
+    effect: "fade",
+    spaceBetween: 30,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+}
