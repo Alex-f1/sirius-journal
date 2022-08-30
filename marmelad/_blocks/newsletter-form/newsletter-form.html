@@ -1,19 +1,27 @@
-<div block="newsletter-form">
+<div block="newsletter-form" class="">
   <div elem="section">
     <form elem="form">
       <div elem="title">Подпишись <br> на рассылку</div>
       <div elem="fields">
-        <div elem="field">
+        <div elem="field" >
           <div elem="input">
             <input type="text" placeholder="Ваш email">
           </div>
+          <i elem="error-icon"></i>
           <button elem="button-ok" class="button-default button-default--dark" type="submit"><span>ОК</span></button>
         </div>
       </div>
+      <div elem="error-text">Текст ошибки</div>
       <div elem="note">
         Передавая свои данные и нажимая кнопку <br>
         “Подписаться” вы соглашаетесь с <br>
         <a href="#">политикой конфиденциальности</a>
+      </div>
+      <div elem="success">
+        <i elem="success-icon"></i>
+        <div elem="success-text">
+          Спасибо за подписку на рассылку. Обещаем, скучно не будет!
+        </div>
       </div>
     </form>
   </div>
