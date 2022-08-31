@@ -98,31 +98,50 @@
       right: 0
       background-image: url("data:image/svg+xml,%3Csvg width='8' height='89' viewBox='0 0 8 89' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.15228 1C4.9705 14.9237 7 29.5016 7 44.5C7 59.4984 4.9705 74.0607 1.15228 88' stroke='%239900FF' stroke-width='1.5' stroke-miterlimit='10'/%3E%3C/svg%3E%0A")
 
-  &__cols
-    display: flex
+  // &__cols
+  //   display: flex
 
-    @media (max-width: 1279px)
-      flex-direction: column
+  //   @media (max-width: 1279px)
+  //     flex-direction: column
 
-  &__col
-    flex: 0 0 385px
-    width: 385px
-    max-width: 385px
-    margin-right: 30px
+  // &__col
+  //   flex: 0 0 385px
+  //   width: 385px
+  //   max-width: 385px
+  //   margin-right: 30px
 
-    @media (max-width: 1279px)
-      flex: none
-      width: 100%
-      max-width: 100%
+  //   @media (max-width: 1279px)
+  //     flex: none
+  //     width: 100%
+  //     max-width: 100%
 
-    &:last-child
-      margin-right: 0
+  //   &:last-child
+  //     margin-right: 0
 
   &__items
-    @media (max-width: 1279px)
+    // @media (max-width: 1279px)
+    //   display: flex
+    //   flex-wrap: wrap
+    //   justify-content: center
+
+    .grid-sizer, .grid-item
+      width: 33.333%
+
+      @media (max-width: 959px)
+        width: 50%
+
+      @media (max-width: 639px)
+        width: 100%
+
+    .grid-item
+      float: left
       display: flex
-      flex-wrap: wrap
       justify-content: center
+
+    .grid:after
+      content: ''
+      display: block
+      clear: both
 
   &__item
     margin-bottom: 70px
