@@ -1,0 +1,54 @@
+= yaml =
+pageTitle: Результаты поиска
+bodyClasses:
+layout: !!map
+    header: true
+    footer: true
+    left: false
+    right: false
+= yaml =
+
+{% extends 'app.html' %}
+
+
+
+{% block main %}
+
+  <div block="search-result">
+    <div elem="section">
+      <div elem="head">
+        <div block="search-panel">
+          <div elem="fields" class="contain">
+            <div elem="field">
+              <div elem="input">
+                <input type="text" placeholder="Введите фразу для поиска">
+              </div>
+              <button elem="button-submit" class="button-default button-default--dark" type="submit">
+                <span>Найти</span>
+              </button>
+            </div>
+          </div>
+        </div><!-- search-panel -->
+        <h1>Результаты поиска</h1>
+        <div elem="find-articles">ничего не найдено</div>
+      </div>
+      <div elem="not-found">
+        <i elem="not-found-icon">
+          <svg width="226" height="225" viewBox="0 0 226 225" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M148.327 48.3637C120.929 20.966 76.5084 20.966 49.1107 48.3637C21.7129 75.7614 21.7129 120.182 49.1107 147.58C76.5084 174.977 120.929 174.977 148.327 147.58C175.724 120.182 175.724 75.7614 148.327 48.3637ZM39.1891 38.4421C72.0663 5.56486 125.371 5.56486 158.248 38.4421C189.455 69.6488 191.041 119.26 163.005 152.337L208.914 198.245L198.992 208.167L153.084 162.258C120.007 190.294 70.3958 188.708 39.1891 157.501C6.31181 124.624 6.31181 71.3194 39.1891 38.4421Z"
+              fill="#8B00FD" fill-opacity="0.2" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M132.434 71.2978L71.9892 131.742L66.9521 126.705L127.397 66.2607L132.434 71.2978Z" fill="#1E0B2E" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M127.397 131.742L66.9521 71.2978L71.9892 66.2607L132.434 126.705L127.397 131.742Z" fill="#1E0B2E" />
+          </svg>
+        </i>
+        <div elem="not-found-text">
+          Попробуйте сформулировать ваш запрос по-другому
+        </div>
+      </div>
+    </div>
+  </div><!-- search-result -->
+
+{% endblock %}
