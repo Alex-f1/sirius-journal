@@ -7,29 +7,33 @@
     margin-bottom: 55px
     height: auto
 
-  // @media (max-height: 734px)
-  //   padding-top: 230px
-
   @media (max-height: 659px)
     padding-top: 0
-    
 
-  &--desktop  
+  &--desktop
     display: block
+
     @media (max-width: 1023px)
       display: none
+
     @media (max-height: 659px)
       display: none
 
   &--mobile
-    display none
+    display: none
+
     @media (max-width: 1023px)
-      display block
+      display: block
+
     @media (max-height: 659px)
-      display block
+      display: block
+
+    .news-slider__content
+      z-index: 5
 
   &__container
     border-radius: 20px
+
     @media (max-width: 1023px)
       border-radius: 20px
       height: 575px
@@ -167,6 +171,17 @@
     height: 48px
     margin-left: auto
     margin-right: auto
+    border-radius: 50%
+    border: 3px solid #FFFFFF
+    position: relative
+    overflow: hidden
+
+    img
+      vertical-align: top
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
 
   &__name
     font-size: 24px
