@@ -320,7 +320,7 @@
       display: flex
       align-items: center
       justify-content: center
-      transition: all 200ms ease-in-out
+      transition: transform .3s, width .3s, bottom .3s, opacity .3s
       border-radius: 20px
       position: absolute
       list-style: none
@@ -329,6 +329,7 @@
       margin: 0 auto
       padding-top: 20px
       text-align: center
+      // transform: translate3d(0, 0, 0)
 
       .news-slider__content
         width: 300px
@@ -481,7 +482,7 @@
 
 .transformPrev
   animation: scaleUp 200ms
-  display: none
+  // display: none
 
 @keyframes scaleUp
   0%
