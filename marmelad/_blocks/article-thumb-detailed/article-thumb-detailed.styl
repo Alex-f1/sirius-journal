@@ -72,12 +72,32 @@
     height: 144px
     text-decoration: none
     border-radius: 16px
-    overflow: hidden
     margin-bottom: 35px
     display: block
+    position: relative
+
 
     @media (max-width: 639px)
       margin-bottom: 0
+
+
+    &:after
+      content: ''
+      position: absolute
+      left: 50%
+      bottom: -47px
+      transform: translateX(-50%)
+      width: 100%
+      height: 47px
+      background: radial-gradient(62.14% 168.18% at 50% -68.18%, #C300FF 0%, rgba(195, 0, 255, 0.88456) 5.21%, rgba(195, 0, 255, 0.148632) 63.54%, rgba(195, 0, 255, 0) 90.54%)
+      opacity: 0
+      visibility: hidden
+      transition: opacity 0.3s, ease 0.3s
+
+    &:hover  
+      &:after
+        opacity: 1
+        visibility: visible
 
     img
       vertical-align: top
