@@ -25,6 +25,9 @@
         @media (max-width: 639px)
           display: block
 
+      &__inner-top
+        padding-bottom: 35px
+
     .article-content
       border-bottom: none
       padding: 0
@@ -81,6 +84,7 @@
     border-bottom: 1px solid #EAEAEA
     padding-bottom: 30px
     margin-bottom: 30px
+    position: relative
 
     @media (max-width: 639px)
       flex-direction: column
@@ -120,6 +124,175 @@
 
     img
       vertical-align: top
+
+  &__audio-player
+    flex: 0 0 80px
+    width: 80px
+    max-width: 80px
+    padding-top: 20px
+    margin-right: 20px
+
+    @media (max-width: 639px)
+      flex: none
+      padding-top: 0
+      margin-right: 0
+
+    &._is-ios
+      .audioplayer
+        .audioplayer-volume
+          display none
+
+    .audioplayer
+      align-items: flex-start
+      flex-direction: column
+      height: auto
+      padding: 0
+      margin: 0
+      border: none
+
+      &._is-active-audio-player
+        .audioplayer-volume, .audioplayer-bar, .audioplayer-time
+          opacity: 1
+          visibility: visible
+
+      &.audioplayer-mute
+        .audioplayer-volume-button
+          background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23f74634' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5003C15 19.6718 15.6716 19.0003 16.5 19.0003H19.4853C19.8189 19.0003 20.143 18.8891 20.4062 18.6843L26.5791 13.8832C27.5644 13.1169 29 13.819 29 15.0672V32.9333C29 34.1815 27.5644 34.8837 26.5791 34.1173L20.4062 29.3162C20.1429 29.1115 19.8189 29.0003 19.4853 29.0003H16.5C15.6716 29.0003 15 28.3287 15 27.5003V20.5003ZM31.1584 28.8144C31.5396 29.1702 32.1423 29.1524 32.4507 28.732C33.447 27.3737 33.9942 25.7279 34 24.0274C34.0057 22.3269 33.4697 20.6774 32.4826 19.3124C32.1771 18.8899 31.5745 18.868 31.1909 19.2212C30.8073 19.5744 30.7898 20.1685 31.0798 20.6019C31.7525 21.6075 32.1158 22.7969 32.1117 24.021C32.1075 25.245 31.7362 26.432 31.0566 27.433C30.7637 27.8644 30.7772 28.4586 31.1584 28.8144ZM35.4073 31.4504C35.0737 31.8715 34.4546 31.8906 34.0618 31.524C33.669 31.1574 33.652 30.5444 33.9789 30.118C35.3124 28.379 36.0468 26.2434 36.0543 24.0343C36.0618 21.8252 35.3418 19.6847 34.0202 17.9367C33.6962 17.5082 33.7173 16.8953 34.1126 16.5314C34.5078 16.1674 35.1268 16.1907 35.4575 16.6141C37.1079 18.7271 38.0091 21.3411 37.9999 24.0409C37.9908 26.7407 37.0719 29.3486 35.4073 31.4504Z' fill='white'/%3E%3C/svg%3E%0A")
+
+      &.audioplayer-playing
+        .audioplayer-playpause
+          background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Crect x='30' y='24' width='7' height='32' rx='2' fill='white'/%3E%3Crect x='43' y='24' width='7' height='32' rx='2' fill='white'/%3E%3C/svg%3E%0A")
+
+          &:hover
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Crect x='30' y='24' width='7' height='32' rx='2' fill='white'/%3E%3Crect x='43' y='24' width='7' height='32' rx='2' fill='white'/%3E%3C/svg%3E%0A")
+
+        .audioplayer-bar
+          cursor: default !important
+
+      .audioplayer-playpause
+        width: 80px
+        height: 80px
+        background: transparent
+        background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Cpath d='M60.4705 38.6263C61.8299 39.4112 61.8299 41.3734 60.4705 42.1583L30.7058 59.3429C29.3463 60.1278 27.6469 59.1467 27.6469 57.5769L27.6469 23.2076C27.6469 21.6378 29.3463 20.6567 30.7058 21.4416L60.4705 38.6263Z' fill='white'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+        border: none
+        border-radius: 0
+        transition: background 0.3s, ease 0.3s
+        margin-bottom: 20px
+
+        &:hover
+          background: transparent
+          background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Cpath d='M60.4705 38.6263C61.8299 39.4112 61.8299 41.3734 60.4705 42.1583L30.7058 59.3429C29.3463 60.1278 27.6469 59.1467 27.6469 57.5769L27.6469 23.2076C27.6469 21.6378 29.3463 20.6567 30.7058 21.4416L60.4705 38.6263Z' fill='white'/%3E%3C/svg%3E%0A")
+
+        a
+          display: none
+
+      .audioplayer-volume
+        width: 100%
+        flex-direction: column
+
+        @media (min-width: 640px)
+          opacity: 0
+          visibility: hidden
+          transition: opacity 0.3s, ease 0.3s
+
+        @media (max-width: 639px)
+          margin-bottom: 15px
+
+        &:hover
+          .audioplayer-volume-adjust
+            opacity: 1
+            visibility: visible
+
+      .audioplayer-volume-button
+        width: 48px
+        height: 48px
+        background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5003C15 19.6718 15.6716 19.0003 16.5 19.0003H19.4853C19.8189 19.0003 20.143 18.8891 20.4062 18.6843L26.5791 13.8832C27.5644 13.1169 29 13.819 29 15.0672V32.9333C29 34.1815 27.5644 34.8837 26.5791 34.1173L20.4062 29.3162C20.1429 29.1115 19.8189 29.0003 19.4853 29.0003H16.5C15.6716 29.0003 15 28.3287 15 27.5003V20.5003ZM31.1584 28.8144C31.5396 29.1702 32.1423 29.1524 32.4507 28.732C33.447 27.3737 33.9942 25.7279 34 24.0274C34.0057 22.3269 33.4697 20.6774 32.4826 19.3124C32.1771 18.8899 31.5745 18.868 31.1909 19.2212C30.8073 19.5744 30.7898 20.1685 31.0798 20.6019C31.7525 21.6075 32.1158 22.7969 32.1117 24.021C32.1075 25.245 31.7362 26.432 31.0566 27.433C30.7637 27.8644 30.7772 28.4586 31.1584 28.8144ZM35.4073 31.4504C35.0737 31.8715 34.4546 31.8906 34.0618 31.524C33.669 31.1574 33.652 30.5444 33.9789 30.118C35.3124 28.379 36.0468 26.2434 36.0543 24.0343C36.0618 21.8252 35.3418 19.6847 34.0202 17.9367C33.6962 17.5082 33.7173 16.8953 34.1126 16.5314C34.5078 16.1674 35.1268 16.1907 35.4575 16.6141C37.1079 18.7271 38.0091 21.3411 37.9999 24.0409C37.9908 26.7407 37.0719 29.3486 35.4073 31.4504Z' fill='white'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        background-position: 0 0
+        background-size: contain
+        transition: background 0.3s, ease 0.3s
+
+        a
+          opacity: 0
+          visibility: hidden
+
+      .audioplayer-volume-adjust
+        width: 100%
+        height: 4px
+        margin-top: 15px
+        margin-left: 0
+        display: block !important
+
+        @media (min-width: 640px)
+          opacity: 0
+          visibility: hidden
+          transition: opacity 0.3s, ease 0.3s
+
+        > div
+          width: 100%
+          height: 100%
+          cursor: default
+
+          div
+            height: 100%
+            background: #9900FF
+
+      .audioplayer-bar
+        display: block
+        margin: 0
+        width: 100%
+        height: 4px
+        position: absolute
+        bottom: -4px
+        left: 0
+
+        @media (min-width: 640px)
+          opacity: 0
+          visibility: hidden
+          transition: opacity 0.3s, ease 0.3s
+
+        &:before
+          top: 0
+          height: 100%
+
+      .audioplayer-bar-loaded
+        background: #ECE4F0
+        top: 0
+        height: 100%
+
+      .audioplayer-bar-played
+        background: #9900FF
+        top: 0
+        height: 100%
+
+        &:after
+          display: none
+
+      .audioplayer-time
+        font-size: 15px
+        color: #1E0B2E
+        font-weight: 500
+        line-height: 1.1
+        letter-spacing: 1px
+        width: 45px
+        position: absolute
+        bottom: 5px
+        margin: 0
+
+        @media (min-width: 640px)
+          opacity: 0
+          visibility: hidden
+          transition: opacity 0.3s, ease 0.3s
+
+        &.audioplayer-time-current
+          left: 0
+
+        &.audioplayer-time-duration
+          right: 0
+          text-align: right
 
   &__date
     font-size: 14px
@@ -325,9 +498,9 @@
     flex-direction: column
 
   &__img-wrap
-    position relative
+    position: relative
     margin-bottom: 20px
-    
+
     &:after
       content: ''
       position: absolute

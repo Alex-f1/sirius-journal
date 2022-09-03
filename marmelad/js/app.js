@@ -66,4 +66,23 @@ $(function() {
       footerCol();
     }
   }) 
+
+  function initAudioPlayer() {
+    var IsIos = /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+
+    $('#audio_player').audioPlayer();
+    $('.audioplayer-playpause').on('click', function () {
+      $(this).closest('.audioplayer').addClass('_is-active-audio-player');
+    }); 
+
+    
+
+    if (IsIos) {
+      $('.podcasts-list__audio-player').addClass('_is-ios');
+    }
+  }
+
+  if ($('#audio_player').length) {
+    initAudioPlayer();
+  }
 });
