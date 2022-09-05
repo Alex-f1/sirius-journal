@@ -140,7 +140,7 @@
     &._is-ios
       .audioplayer
         .audioplayer-volume
-          display none
+          display: none
 
     .audioplayer
       align-items: flex-start
@@ -155,16 +155,23 @@
           opacity: 1
           visibility: visible
 
+        + .playback-rate
+          opacity: 1
+          visibility: visible
+
       &.audioplayer-mute
         .audioplayer-volume-button
-          background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%23f74634' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5003C15 19.6718 15.6716 19.0003 16.5 19.0003H19.4853C19.8189 19.0003 20.143 18.8891 20.4062 18.6843L26.5791 13.8832C27.5644 13.1169 29 13.819 29 15.0672V32.9333C29 34.1815 27.5644 34.8837 26.5791 34.1173L20.4062 29.3162C20.1429 29.1115 19.8189 29.0003 19.4853 29.0003H16.5C15.6716 29.0003 15 28.3287 15 27.5003V20.5003ZM31.1584 28.8144C31.5396 29.1702 32.1423 29.1524 32.4507 28.732C33.447 27.3737 33.9942 25.7279 34 24.0274C34.0057 22.3269 33.4697 20.6774 32.4826 19.3124C32.1771 18.8899 31.5745 18.868 31.1909 19.2212C30.8073 19.5744 30.7898 20.1685 31.0798 20.6019C31.7525 21.6075 32.1158 22.7969 32.1117 24.021C32.1075 25.245 31.7362 26.432 31.0566 27.433C30.7637 27.8644 30.7772 28.4586 31.1584 28.8144ZM35.4073 31.4504C35.0737 31.8715 34.4546 31.8906 34.0618 31.524C33.669 31.1574 33.652 30.5444 33.9789 30.118C35.3124 28.379 36.0468 26.2434 36.0543 24.0343C36.0618 21.8252 35.3418 19.6847 34.0202 17.9367C33.6962 17.5082 33.7173 16.8953 34.1126 16.5314C34.5078 16.1674 35.1268 16.1907 35.4575 16.6141C37.1079 18.7271 38.0091 21.3411 37.9999 24.0409C37.9908 26.7407 37.0719 29.3486 35.4073 31.4504Z' fill='white'/%3E%3C/svg%3E%0A")
+          background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5C15 19.6716 15.6716 19 16.5 19H19.4853C19.8189 19 20.143 18.8888 20.4062 18.684L26.5791 13.8829C27.5644 13.1166 29 13.8187 29 15.067V18.2634L18.2634 29H16.5C15.6716 29 15 28.3284 15 27.5V20.5ZM29 23.9201L34.3846 18.5355C34.7751 18.145 34.7751 17.5118 34.3846 17.1213C33.9941 16.7307 33.3609 16.7307 32.9704 17.1213L18.1212 31.9705C17.7306 32.361 17.7306 32.9942 18.1212 33.3847C18.5117 33.7752 19.1449 33.7752 19.5354 33.3847L22.2051 30.715L26.5791 34.1171C27.5644 34.8834 29 34.1813 29 32.933V23.9201Z' fill='white'/%3E%3C/svg%3E%0A")
+
+          &:hover
+            background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%231E0B2E' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5C15 19.6716 15.6716 19 16.5 19H19.4853C19.8189 19 20.143 18.8888 20.4062 18.684L26.5791 13.8829C27.5644 13.1166 29 13.8187 29 15.067V18.2634L18.2634 29H16.5C15.6716 29 15 28.3284 15 27.5V20.5ZM29 23.9201L34.3846 18.5355C34.7751 18.145 34.7751 17.5118 34.3846 17.1213C33.9941 16.7307 33.3609 16.7307 32.9704 17.1213L18.1212 31.9705C17.7306 32.361 17.7306 32.9942 18.1212 33.3847C18.5117 33.7752 19.1449 33.7752 19.5354 33.3847L22.2051 30.715L26.5791 34.1171C27.5644 34.8834 29 34.1813 29 32.933V23.9201Z' fill='white'/%3E%3C/svg%3E%0A")
 
       &.audioplayer-playing
         .audioplayer-playpause
           background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Crect x='30' y='24' width='7' height='32' rx='2' fill='white'/%3E%3Crect x='43' y='24' width='7' height='32' rx='2' fill='white'/%3E%3C/svg%3E%0A")
 
           &:hover
-            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Crect x='30' y='24' width='7' height='32' rx='2' fill='white'/%3E%3Crect x='43' y='24' width='7' height='32' rx='2' fill='white'/%3E%3C/svg%3E%0A")
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%231E0B2E' stroke='white' stroke-width='2'/%3E%3Crect x='30' y='24' width='7' height='32' rx='2' fill='white'/%3E%3Crect x='43' y='24' width='7' height='32' rx='2' fill='white'/%3E%3C/svg%3E%0A")
 
         .audioplayer-bar
           cursor: default !important
@@ -184,7 +191,7 @@
 
         &:hover
           background: transparent
-          background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%239900FF' stroke='white' stroke-width='2'/%3E%3Cpath d='M60.4705 38.6263C61.8299 39.4112 61.8299 41.3734 60.4705 42.1583L30.7058 59.3429C29.3463 60.1278 27.6469 59.1467 27.6469 57.5769L27.6469 23.2076C27.6469 21.6378 29.3463 20.6567 30.7058 21.4416L60.4705 38.6263Z' fill='white'/%3E%3C/svg%3E%0A")
+          background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='39' fill='%231E0B2E' stroke='white' stroke-width='2'/%3E%3Cpath d='M60.4705 38.6262C61.8299 39.4111 61.8299 41.3733 60.4705 42.1582L30.7058 59.3429C29.3463 60.1278 27.6469 59.1467 27.6469 57.5769L27.6469 23.2075C27.6469 21.6378 29.3463 20.6566 30.7058 21.4415L60.4705 38.6262Z' fill='white'/%3E%3C/svg%3E%0A")
 
         a
           display: none
@@ -218,6 +225,9 @@
         a
           opacity: 0
           visibility: hidden
+
+        &:hover
+          background-image: url("data:image/svg+xml,%3Csvg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='23' fill='%231E0B2E' stroke='white' stroke-width='2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 20.5C15 19.6716 15.6716 19 16.5 19H19.4853C19.8189 19 20.143 18.8888 20.4062 18.684L26.5791 13.8829C27.5644 13.1166 29 13.8187 29 15.067V32.933C29 34.1813 27.5644 34.8834 26.5791 34.1171L20.4062 29.316C20.1429 29.1112 19.8189 29 19.4853 29H16.5C15.6716 29 15 28.3284 15 27.5V20.5ZM31.1584 28.8141C31.5396 29.1699 32.1423 29.1521 32.4507 28.7317C33.447 27.3734 33.9942 25.7276 34 24.0271C34.0057 22.3266 33.4697 20.6771 32.4826 19.3121C32.1771 18.8896 31.5745 18.8678 31.1909 19.2209C30.8073 19.5741 30.7898 20.1682 31.0798 20.6016C31.7525 21.6072 32.1158 22.7967 32.1117 24.0207C32.1075 25.2448 31.7362 26.4317 31.0566 27.4327C30.7637 27.8642 30.7772 28.4583 31.1584 28.8141ZM35.4073 31.4501C35.0737 31.8713 34.4546 31.8903 34.0618 31.5237C33.669 31.1571 33.652 30.5441 33.9789 30.1178C35.3124 28.3788 36.0468 26.2432 36.0543 24.0341C36.0618 21.825 35.3418 19.6844 34.0202 17.9365C33.6962 17.5079 33.7173 16.895 34.1126 16.5311C34.5078 16.1672 35.1268 16.1904 35.4575 16.6138C37.1079 18.7269 38.0091 21.3409 37.9999 24.0407C37.9908 26.7405 37.0719 29.3483 35.4073 31.4501Z' fill='white'/%3E%3C/svg%3E%0A")
 
       .audioplayer-volume-adjust
         width: 100%
@@ -293,6 +303,106 @@
         &.audioplayer-time-duration
           right: 0
           text-align: right
+
+    .playback-rate
+      position: absolute
+      left: 60px
+      bottom: 6px
+      display: flex
+      align-items: center
+
+      @media (min-width: 640px)
+        opacity: 0
+        visibility: hidden
+        transition: opacity 0.3s, ease 0.3s
+
+      &__button
+        font-size: 15px
+        color: #ECE4F0
+        font-weight: 500
+        line-height: 1
+        border: 1px solid #ECE4F0
+        background-color: transparent
+        padding: 0 2px
+        border-radius: 2px
+        min-width: 26px
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-right: 8px
+        cursor: pointer
+        transition: color 0.3s, ease 0.3s
+
+        &:before
+          content: ''
+          flex: 0 0 8px
+          width: 8px
+          max-width: 8px
+          height: 8px
+          background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' fill='%23ECE4F0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' fill='%23ECE4F0'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' stroke='%23ECE4F0' stroke-width='0.5'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' stroke='%23ECE4F0' stroke-width='0.5'/%3E%3C/svg%3E%0A")
+          background-repeat: no-repeat
+          background-position: 0 0
+          background-size: contain
+          margin-right: 2px
+          transition: background 0.3s, ease 0.3s
+
+        &._is-active
+          color: #8B00FD
+          border: 1px solid #8B00FD
+          pointer-events: none
+
+          &:before
+            background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' fill='%238B00FD'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' fill='%238B00FD'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' stroke='%238B00FD' stroke-width='0.5'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' stroke='%238B00FD' stroke-width='0.5'/%3E%3C/svg%3E%0A")
+
+        &:hover
+          color: #1E0B2E
+          border: 1px solid #1E0B2E
+
+          &:before
+            background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' fill='%231E0B2E'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' fill='%231E0B2E'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.24158 1.34804L1.34902 7.2406L0.759766 6.65135L6.65232 0.758789L7.24158 1.34804Z' stroke='%231E0B2E' stroke-width='0.5'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.65232 7.2406L0.759766 1.34805L1.34902 0.758789L7.24158 6.65135L6.65232 7.2406Z' stroke='%231E0B2E' stroke-width='0.5'/%3E%3C/svg%3E%0A")
+
+    .audio-player-fixed-panel
+      position: fixed
+      background-color: #fff
+      z-index: 100
+      width: 100%
+      top: 0
+      left: 0
+      padding: 10px 0
+      opacity: 0
+      visibility: hidden
+
+      &._is-show
+        opacity: 1
+        visibility: visible
+
+    .audioplayer-time, .audioplayer-bar, .playback-rate
+      &._is-fixed
+        position: fixed
+        z-index: 105
+
+    .audioplayer-time
+      &._is-fixed
+        top: 3px
+        bottom: auto
+
+      &.audioplayer-time-current
+        &._is-fixed
+          left: 5px
+
+      &.audioplayer-time-duration
+        &._is-fixed
+          right: 5px
+
+    .audioplayer-bar
+      &._is-fixed
+        top: 20px
+        bottom: auto
+
+    .playback-rate
+      &._is-fixed
+        top: 10px
+        bottom: auto
 
   &__date
     font-size: 14px

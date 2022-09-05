@@ -69,17 +69,62 @@ $(function() {
 
   function initAudioPlayer() {
     var IsIos = /iPhone|iPad|iPod/i.test(window.navigator.userAgent);
+    
+    const audioPlayer = $('#audio_player');
 
-    $('#audio_player').audioPlayer();
+    audioPlayer.audioPlayer();
+
     $('.audioplayer-playpause').on('click', function () {
       $(this).closest('.audioplayer').addClass('_is-active-audio-player');
-    }); 
+      
+    });
 
-    
+    $('.js-button-playback-rate').on('click', function() {
+      let thisElem = $(this);
+      thisElem.addClass('_is-active').siblings().removeClass('_is-active');
+      let getDataPlaybackRate = thisElem.data('playback-rate');
+
+      if (getDataPlaybackRate == 'x0.5') {
+        document.querySelector('audio').playbackRate = 0.5;
+      }
+      if (getDataPlaybackRate == 'x0.75') {
+        document.querySelector('audio').playbackRate = 0.75;
+      }
+      if (getDataPlaybackRate == 'x1') {
+        document.querySelector('audio').playbackRate = 1.0;
+      }
+      if (getDataPlaybackRate == 'x2') {
+        document.querySelector('audio').playbackRate = 2.0;
+      }
+      if (getDataPlaybackRate == 'x3') {
+        document.querySelector('audio').playbackRate = 2.0;
+      }
+      if (getDataPlaybackRate == 'x4') {
+        document.querySelector('audio').playbackRate = 4.0;
+      }
+    });
 
     if (IsIos) {
       $('.podcasts-list__audio-player').addClass('_is-ios');
     }
+
+    let getOffsetTopAudioPlayerBar = $('.audioplayer-bar').offset().top + 50;
+
+    $(window).on('scroll', function () {
+      if ($(this).scrollTop() >= getOffsetTopAudioPlayerBar && $('.audioplayer').hasClass('audioplayer-playing')) {
+        $('.audio-player-fixed-panel').addClass('_is-show');
+        $('.audioplayer-time').addClass('_is-fixed');
+        $('.audioplayer-bar').addClass('_is-fixed');
+        $('.other-podcasts__head').css('top', 24);
+        // $('.playback-rate').addClass('_is-fixed');
+      } else {
+        $('.audio-player-fixed-panel').removeClass('_is-show');
+        $('.audioplayer-time').removeClass('_is-fixed');
+        $('.audioplayer-bar').removeClass('_is-fixed');
+        // $('.playback-rate').removeClass('_is-fixed');
+      }
+    });
+    
   }
 
   if ($('#audio_player').length) {

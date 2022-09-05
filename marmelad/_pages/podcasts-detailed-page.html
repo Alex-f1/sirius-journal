@@ -38,9 +38,30 @@ layout: !!map
           <div elem="inner-top">
             <!-- <div elem="podcast-icon"><img src="img/play-icon.svg" alt=""></div> -->
             <div elem="audio-player">
+              <div class="audio-player-fixed-panel"></div>
               <audio id="audio_player">
                 <source src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3">
               </audio>
+              <div block="playback-rate">
+                <!-- <button elem="button" class="js-button-playback-rate" data-playback-rate="x0.5">
+                  0.5
+                </button>
+                <button elem="button" class="js-button-playback-rate" data-playback-rate="x0.75">
+                  0.75
+                </button> -->
+                <button elem="button" class="_is-active js-button-playback-rate" data-playback-rate="x1">
+                  1
+                </button>
+                <button elem="button" class="js-button-playback-rate" data-playback-rate="x2">
+                  2
+                </button>
+                <!-- <button elem="button" class="js-button-playback-rate" data-playback-rate="x3">
+                  3
+                </button> -->
+                <button elem="button" class="js-button-playback-rate" data-playback-rate="x4">
+                  4
+                </button>
+              </div><!-- playback-rate -->
             </div>
             <div elem="head-podcast">
               <div elem="date">
