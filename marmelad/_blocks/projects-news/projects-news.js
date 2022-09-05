@@ -28,17 +28,15 @@ function projectsNewsSlider() {
   let offsetLeft = 0;
   let offsetLeftNext = 0;
 
-  $(window).on('load resize', function () {
-    let getWidthItem = $('.projects-news__item').width();
-    let getHeightItem = $('.projects-news__item').height();
+  let getWidthItem = $('.projects-news__item').width();
+  let getHeightItem = $('.projects-news__item').height();
 
-    offsetLeft = $('.projects-news__item.swiper-slide-active').position().left;
-    offsetLeftNext = $('.projects-news__item.swiper-slide-active').next().position().left;
+  offsetLeft = $('.projects-news__item.swiper-slide-active').position().left;
+  offsetLeftNext = $('.projects-news__item.swiper-slide-active').next().position().left;
 
-    $('.js-backdrop-fill').css({
-      width: getWidthItem,
-      height: getHeightItem,
-    })
+  $('.js-backdrop-fill').css({
+    width: getWidthItem,
+    height: getHeightItem,
   });
 
   function hoverItem() {
