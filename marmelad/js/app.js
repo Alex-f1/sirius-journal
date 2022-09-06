@@ -130,4 +130,6 @@ $(function() {
   if ($('#audio_player').length) {
     initAudioPlayer();
   }
+
+  $('.category-menu').show();
 });
