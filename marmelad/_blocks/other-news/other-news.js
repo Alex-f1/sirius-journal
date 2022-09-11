@@ -2,6 +2,7 @@ function otherNewsSlider() {
   const otherNewsSlider = new Swiper(".js-other-news-slider", {
     slidesPerView: 2.5,
     spaceBetween: 30,
+    loop: true,
     speed: 1000,
     navigation: {
       prevEl: ".swiper-button-prev",

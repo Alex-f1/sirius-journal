@@ -1,7 +1,7 @@
 function titleArticlesAnimate() {
 
   const getOffsetArticlesDayBlock = $('.articles-day').length ? $('.articles-day').offset().top - 300 : null;
-  const getOffsetOtherBlock = $('.other-articles').length ? $('.other-articles').offset().top - 1000 : null;
+  const getOffsetOtherBlock = $('.other-articles').length ? $('.other-articles').offset().top  : null;
   const getOffsetRecommendedBlock = $('.recommended-article').length ? $('.recommended-article').offset().top - 300 : null;
   const getOffsetNextArticledBlock = $('.next-article').length ? $('.next-article').offset().top - 300 : null;
   const getOffsetOtherPodcastsBlock = $('.other-podcasts').length ? $('.other-podcasts').offset().top - 300 : null;
@@ -15,10 +15,19 @@ function titleArticlesAnimate() {
     } else {
       $('.articles-day').removeClass('_is-visible');
     }
-    if ($(this).scrollTop() >= getOffsetOtherBlock) {
-      $('.other-articles').addClass('_is-visible');
+    if (window.matchMedia("(min-height: 660px)").matches) {
+      if ($(this).scrollTop() >= getOffsetOtherBlock - 1200) {
+        $('.other-articles').addClass('_is-visible');
+      } else {
+        $('.other-articles').removeClass('_is-visible');
+      }
+
     } else {
-      $('.other-articles').removeClass('_is-visible');
+      if ($(this).scrollTop() >= getOffsetOtherBlock - 700) {
+        $('.other-articles').addClass('_is-visible');
+      } else {
+        $('.other-articles').removeClass('_is-visible');
+      }
     }
     if ($(this).scrollTop() >= getOffsetRecommendedBlock) {
       $('.recommended-article').addClass('_is-visible');
@@ -55,7 +64,9 @@ function titleArticlesAnimate() {
 }
 
 if ($('.animate-title').length) {
-  if (window.matchMedia("(min-width: 1024px)").matches) {
-    titleArticlesAnimate();
-  }
+  $(window).on('load resize', function () {
+    if (window.matchMedia("(min-width: 1024px)").matches) {
+      titleArticlesAnimate();
+    }
+  })
 }
