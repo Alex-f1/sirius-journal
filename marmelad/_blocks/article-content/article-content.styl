@@ -72,6 +72,7 @@
     display: flex
     align-items: center
     justify-content: space-between
+    min-height: 64px
 
   &__author
     display: flex
@@ -85,6 +86,9 @@
 
         &__author-name
           color: #9900FF
+
+    ~ .article-content__reading-time
+      transform: translateX(-40px) !important
 
   &__author-pic
     flex: 0 0 48px
@@ -127,10 +131,15 @@
     text-transform: uppercase
     display: flex
     align-items: center
-    margin-right: 75px
+    // margin-right: 75px
+    margin-left: auto
+    margin-right: auto
 
     @media (max-width: 767px)
       display: none
+
+    ~ .article-content__poster-name
+      margin-left: 0
 
     &:before
       content: ''
@@ -147,6 +156,10 @@
   &__poster-name
     color: #1E0B2E
     text-align: right
+    margin-left: auto
+
+    @media (max-width: 767px)
+      margin-left: auto !important
 
     strong
       font-size: 14px
