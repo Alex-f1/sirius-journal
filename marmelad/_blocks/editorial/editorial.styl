@@ -83,6 +83,7 @@
     margin-bottom: 60px
     display: flex
     justify-content: center
+    text-decoration: none
 
     @media (max-width: 1279px)
       width: 33.333%
@@ -97,8 +98,8 @@
     display: flex
     flex-direction: column
     align-items: center
-    padding-right: 35px
-    padding-left: 35px
+    padding-right: 25px
+    padding-left: 25px
 
     @media (max-width: 639px)
       padding-right: 0
@@ -156,6 +157,20 @@
     text-align: center
     letter-spacing: 5px
     text-transform: uppercase
+
+  &__position + &__email
+    margin-top: 15px
+    margin-bottom: 5px
+
+  &__position + &__phone
+    margin-top: 15px
+
+  &__email, &__phone
+    font-size: 14px
+    color: #D3CED6
+    font-weight: 400
+    line-height: 1
+    text-align: center
 
   &__bottom
     max-width: 1030px

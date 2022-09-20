@@ -1,5 +1,3 @@
-// var newsSlider = undefined;
-
 function sliderNews() {
   var newsSlider = new Swiper(".news-slider--mobile .js-news-slider", {
     loop: false,
@@ -25,80 +23,14 @@ function sliderNews() {
       },
     },
   });
-  // $('.news-slider__container').removeClass('card-stack');
-  // $('.news-slider__items').removeClass('card-list');
-  // $('.news-slider__item').removeClass('card');
-
-  // $('.news-slider__container').addClass('swiper');
-  // $('.news-slider__items').addClass('swiper-wrapper');
-  // $('.news-slider__item').addClass('swiper-slide');
-
-  /* const breakpoint = window.matchMedia('(max-width:1279px)');
-  const breakpointHeight = window.matchMedia('(max-height:660px)');
-
-  let newsSlider;
-
-  const breakpointChecker = function () {
-
-    if (breakpoint.matches === false && breakpointHeight === false) {
-
-      if (newsSlider !== undefined) newsSlider.destroy(true, true);
-
-      return;
-
-    } else if (breakpoint.matches === true && breakpointHeight === true) {
-
-      return enableSwiper();
-
-    }
-
-  };
-
-  const enableSwiper = function () {
-
-    newsSlider = new Swiper(".js-news-slider", {
-      loop: false,
-      speed: 800,
-      autoplay: {
-        delay: 5000,
-      },
-      effect: "creative",
-      creativeEffect: {
-        prev: {
-          shadow: true,
-          translate: ["-20%", 0, -1],
-        },
-        next: {
-          translate: ["100%", 0, 0],
-        },
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + '<span></span>' + '</span>';
-        },
-      },
-    });
-
-  };
-
-  breakpoint.addEventListener("load", breakpointChecker);
-  breakpointHeight.addEventListener("load", breakpointChecker);
-
-  breakpointChecker(); */
 
 }
 
-function cardNews() {
-  // $('.news-slider__container').removeClass('swiper').removeAttr('style');
-  // $('.news-slider__items').removeClass('swiper-wrapper').removeAttr('style');
-  // $('.news-slider__item').removeClass('swiper-slide').removeAttr('style');
-
-  // $('.news-slider__container').addClass('card-stack');
-  // $('.news-slider__items').addClass('card-list');
-  // $('.news-slider__item').addClass('card');
-
+function cardNews(disabledRaf) {
+  if (disabledRaf) {
+    window.cancelAnimationFrame(scrollRaf);   
+    return;
+  }
   const lastCard = $('.card-list .card').length - 1;
 
   var articlesDay = $('.articles-day__inner');
@@ -121,15 +53,20 @@ function cardNews() {
 
   var sliderStep = parseInt(160 / cards.length);
 
-  var sliderCurrent = 0;
+  var sliderCurrent = 1;
   
   var scrollPos = 0;
- 
-  $(window).scroll(function () {
+
+  var scrollStep = Math.round(outerHeightLeft / 4);
+  var forBackScroll;
+  function scrollRaf () {
     if (articlesDayTop >= window.pageYOffset) {
       articlesDayColsRight.css({
         transform: 'translateY(0)',
       });
+
+      scrollStep = Math.round(outerHeightLeft / 4);
+      forBackScroll;
     }
 
     /* if (scrollYRelease <= window.pageYOffset) {
@@ -139,6 +76,7 @@ function cardNews() {
     //start
     if (articlesDayTop <= window.pageYOffset && scrollYRelease > window.pageYOffset) {
       let progress = (window.pageYOffset - articlesDayTop) / (scrollDiff / 100);
+      
       let progressPath = (lrDif + lrDifSpeed) / 100 * progress;
 
       $('.articles-day__head').css('z-index', 45)
@@ -153,6 +91,7 @@ function cardNews() {
 
       if (progressPath <= 0) {
         progressPath = 0;
+        console.log('0')
       }
 
       articlesDayColsRight.css({
@@ -161,12 +100,23 @@ function cardNews() {
       
       var slideIndex = parseInt(progress / sliderStep);
 
-      var scrollTop = $(this).scrollTop();
+      // console.log(slideIndex)
+
+      var scrollTop = $(window).scrollTop();
+      // console.log(scrollTop);
 
       
-      
-      if (slideIndex != sliderCurrent && scrollTop > scrollPos) {
+      // console.log(scrollStep)
+      // var slideIndexStep = Math.ceil((scrollTop - $('.articles-day').offset().top) / scrollStep);
+      var slideIndexStep = Math.ceil((scrollTop - $('.articles-day').offset().top));
+      // console.log(slideIndexStep)
+      // console.log(sliderCurrent, slideIndexStep)
+
+      if (scrollStep <= slideIndexStep && scrollTop > scrollPos) {
+        scrollStep += Math.round(scrollStep / 2);
+        forBackScroll = scrollStep;
         sliderCurrent = slideIndex;
+        
         var prependList = function () {
           if ($('.card').hasClass('activeNow')) {
             var $slicedCard = $('.card').slice(lastCard).removeClass('transformThis activeNow');
@@ -177,7 +127,8 @@ function cardNews() {
         }
         $('.card').last().removeClass('transformPrev').addClass('transformThis').prev().addClass('activeNow');
         setTimeout(function () { prependList(); }, 200);
-      } else if (slideIndex != sliderCurrent && scrollTop < scrollPos) {
+      } else if (forBackScroll >= slideIndexStep && forBackScroll >= 300 && scrollTop < scrollPos) {
+        forBackScroll -= Math.round(forBackScroll / 2)
         sliderCurrent = slideIndex;
         var appendToList = function () {
           if ($('.card').hasClass('activeNow')) {
@@ -192,8 +143,17 @@ function cardNews() {
       
       scrollPos = scrollTop;
 
-    }      
-  });
+    }  
+
+    if (window.matchMedia("(min-width: 1024px)").matches && window.matchMedia("(min-height: 660px)").matches) {
+      window.requestAnimationFrame(scrollRaf);
+    } else {
+      window.cancelAnimationFrame(scrollRaf);
+    }
+  }
+  
+  
+  window.requestAnimationFrame(scrollRaf);   
 
   // $('.next').click(function (event) {
   //   event.preventDefault();
@@ -224,8 +184,9 @@ function cardNews() {
 if ($('.articles-day').length) {
   $(window).on('load resize', function() {
     if (window.matchMedia("(min-width: 1024px)").matches && window.matchMedia("(min-height: 660px)").matches) {
-      cardNews();
+      cardNews(false);
     } else {
+      cardNews(true);
       $('.news-slider--desktop').css('display', 'none')
       $('.news-slider--mobile').css({display: 'block', paddingTop: 0,})
       $('.articles-day__col--slider').css('height', 'auto')
